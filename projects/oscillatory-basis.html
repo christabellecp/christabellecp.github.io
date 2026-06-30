@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oscillatory Basis for Consciousness · Christabelle Pabalan</title>
+<meta name="description" content="A time-frequency analysis investigating whether gamma phase synchronization provides a neural basis for consciousness. Undergraduate research in cognitive science by Christabelle Pabalan." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #0F0E0C;
+    --bg-elevated:  #15130F;
+    --surface:      #1A1714;
+    --surface-hi:   #221E1A;
+    --border:       #2C2723;
+    --border-soft:  #211D1A;
+
+    --text:         #F2ECE0;
+    --text-soft:    #D8CFBC;
+    --text-muted:   #C2B6A0;
+    --text-dim:     #918876;
+
+    --accent:       #9C8DDB;  /* lavender for earlier research */
+    --amber:        #ECA253;
+
+    --max:          900px;
+    --gutter:       clamp(20px, 4vw, 56px);
+
+    --radius-lg:    6px;
+
+    --serif:        'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans:         'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono:         'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at top, rgba(156, 141, 219, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(236, 162, 83, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ─── nav ─── */
+
+  .nav {
+    border-bottom: 1px solid var(--border-soft);
+    padding: 22px 0;
+    backdrop-filter: blur(8px);
+    background: rgba(15, 14, 12, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-back {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-back::before { content: '←'; font-size: 13px; }
+  .nav-back:hover { color: var(--accent); }
+
+  .nav-mark {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  /* ─── hero ─── */
+
+  .hero {
+    padding: clamp(60px, 10vh, 110px) 0 clamp(40px, 7vh, 70px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    font-variation-settings: "SOFT" 60;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+
+  .hero-dek {
+    margin-top: 28px;
+    max-width: 640px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* ─── content sections ─── */
+
+  .section {
+    padding: clamp(48px, 8vh, 80px) 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .section-num span {
+    display: inline-block;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    border-radius: 100px;
+    padding: 2px 9px 1px;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .prose p {
+    margin-bottom: 1.2em;
+    color: var(--text-soft);
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose em { font-style: italic; color: var(--text); }
+  .prose strong { color: var(--text); font-weight: 500; }
+
+  /* citation / inline reference */
+  .prose .cite {
+    font-style: normal;
+    color: var(--text-dim);
+    font-size: 0.9em;
+  }
+
+  /* ─── question / hypothesis blocks ─── */
+
+  .qa-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .qa-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .qa-body {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--text);
+  }
+  .qa-body em { font-style: italic; color: var(--accent); }
+
+  /* ─── methodology / parameter table ─── */
+
+  .method-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .method-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+  }
+  .method-item-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .method-item-title em { font-style: italic; color: var(--accent); }
+  .method-item-body {
+    color: var(--text-soft);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  /* ─── figure / image ─── */
+
+  .figure {
+    margin: 36px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+  }
+  .figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .figure-caption {
+    margin-top: 14px;
+    padding: 0 4px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .figure-caption strong {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  /* ─── footer / back link ─── */
+
+  .pagination {
+    padding: 48px 0 80px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .pagination-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 12px 0;
+    transition: color 0.15s ease, padding-left 0.15s ease;
+  }
+  .pagination-back::before { content: '←'; font-size: 16px; }
+  .pagination-back:hover { color: var(--accent); padding-left: 6px; }
+
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 24px 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ─── accessibility ─── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="nav-back">Portfolio</a>
+    <a href="../index.html" class="nav-mark">Christabelle Pabalan</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">Cognitive Science Research · Time-Frequency Analysis</div>
+
+      <h1 class="hero-title"><em>Oscillatory Basis</em><br/>for Consciousness</h1>
+
+      <p class="hero-dek">
+        A neural-signal analysis investigating whether gamma phase
+        synchronization across cortical regions provides an oscillatory
+        basis for conscious experience, comparing awake and anesthetized
+        states.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Domain</span>
+          <span>Cognitive Science · EEG</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Methods</span>
+          <span>FFT · STFT · Hilbert Transform</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Data</span>
+          <span>NeuroTycho ECoG</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Type</span>
+          <span>Undergraduate Research</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTRODUCTION ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>01</span> Introduction</div>
+      <h2 class="section-title">Searching for the rhythms a brain holds <em>when it knows it's awake</em>.</h2>
+      <div class="prose">
+        <p>
+          In recent years, there has been an increase in literature devoted
+          to understanding the functional contributions of neural
+          oscillations. It is suspected that synchronous neural
+          oscillations that occur globally rather than locally give rise
+          to conscious awareness <span class="cite">(Ward, L.M., 2003)</span>. While
+          there is research that explores whether the unresponsiveness
+          that arises from anesthesia could be equivalent to
+          unconsciousness, we work under the assumption that anesthesia
+          induces an unconscious state <span class="cite">(Alkire, Hudetz, Tononi,
+          2008)</span>.
+        </p>
+        <p>
+          Anesthesia is commonly used as a model of slow-wave sleep,
+          as ketamine-xylazine anesthesia reproduces the main features
+          of sleep slow oscillation. Slow waves are often associated
+          with diminished consciousness even in the presence of high
+          gamma activity <span class="cite">(Chauvette et al., 2011; Murphy et al.,
+          2011)</span>.
+        </p>
+        <p>
+          A survey of sleep research presents many relationships between
+          different cortical areas, frequency bands, and stages of sleep
+          and consciousness: most notably, the presence of theta
+          oscillations in the cingulate cortex during wakefulness and
+          REM sleep but <em>not</em> slow-wave sleep <span class="cite">(Nishida et
+          al., 2004)</span>. Wakefulness and N2/N3 stages of slow-wave sleep
+          are characterized by slow delta oscillations. There is also
+          high speculation as to whether conscious experience and a
+          sense of agency arises from a gamma-synchronized dendritic web,
+          also known as the <em>conscious pilot</em> <span class="cite">(Hameroff,
+          2009)</span>.
+        </p>
+        <p>
+          So we ask: how do oscillations compare during sleep and
+          wakefulness across brain regions? Are there neural correlates
+          of consciousness, and if so, how do they manifest as neural
+          oscillations?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RESEARCH QUESTION ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>02</span> Research Question &amp; Hypothesis</div>
+
+      <div class="qa-block">
+        <div class="qa-label">Research Question</div>
+        <div class="qa-body">
+          How do oscillation frequencies compare during an
+          <em>anesthetized state</em> and a <em>wakeful state</em> across
+          brain regions? Is gamma phase synchronization an oscillatory
+          basis for consciousness?
+        </div>
+      </div>
+
+      <div class="qa-block">
+        <div class="qa-label">Hypothesis</div>
+        <div class="qa-body">
+          Based on prior literature, we hypothesize that lower frequencies
+          will contribute to the anesthetized state more than the awake
+          state. We anticipate that the cingulate region will show
+          regular and continuous theta oscillation during the awake state
+          but not during the anesthetized state. Finally, we expect gamma
+          phase synchronization to be a basis for consciousness, with
+          high synchronization across brain regions during the awake
+          state and not in the anesthetized state.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── METHODOLOGY ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>03</span> Methodology</div>
+      <h2 class="section-title">Decomposing the signal into the <em>frequencies that compose it</em>.</h2>
+
+      <h3 style="font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--text); margin-bottom: 14px; margin-top: 24px;">3.1 &nbsp; Dataset</h3>
+      <div class="prose">
+        <p>
+          The dataset is from NeuroTycho's <em>Anesthesia and Sleep
+          Task</em>, an experiment by Yanagawa, Chao, Hasegawa, and
+          Fujii. ECoG data was extracted from monkey cortices, sampled
+          at 1000Hz from three channels (cingulate, temporal cortex, and
+          occipital cortex) from electrodes 52, 91, and 70 respectively.
+          For 5 minutes, the monkey is awake with eyes open; for another
+          5 minutes, the monkey is anesthetized.
+        </p>
+      </div>
+
+      <h3 style="font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--text); margin-bottom: 14px; margin-top: 36px;">3.2 &nbsp; Methods &amp; Parameter Decisions</h3>
+
+      <div class="method-list">
+
+        <div class="method-item">
+          <div class="method-item-title"><em>Fourier Transform</em> &amp; Power Spectral Density</div>
+          <p class="method-item-body">
+            The Fourier Transform converts the signal from time domain to
+            frequency domain. We use it to find which frequencies
+            contribute most during the awake state and compare to the
+            anesthetized state by plotting the power spectral density,
+            which displays the normalized power of each frequency.
+          </p>
+        </div>
+
+        <div class="method-item">
+          <div class="method-item-title"><em>Short-Time Fourier Transform</em> (STFT)</div>
+          <p class="method-item-body">
+            STFT takes the Fourier transform at various windows across
+            time, allowing us to plot the power of each frequency across
+            time using a spectrogram. There is a known tradeoff between
+            longer and shorter windows: temporal versus frequency
+            resolution. We initially used a window size of 1 second and
+            an overlap of 0.5 seconds as a standard measure. Upon
+            noticing frequency-band spikes every 50 seconds, we also
+            computed the spectrogram with a window of 5.0 seconds and
+            overlap of 4.0 seconds, trading temporal for frequency
+            resolution to see the spikes more clearly.
+          </p>
+        </div>
+
+        <div class="method-item">
+          <div class="method-item-title"><em>Filtering &amp; Convolution</em></div>
+          <p class="method-item-body">
+            We applied a bandpass filter for each brainwave (delta,
+            theta, alpha, beta, gamma), decomposing the signal into its
+            components and comparing the awake and anesthetized states
+            side by side, building a visual overview of how each band
+            differs between states.
+          </p>
+        </div>
+
+        <div class="method-item">
+          <div class="method-item-title"><em>Hilbert Transform</em> &amp; Instantaneous Power</div>
+          <p class="method-item-body">
+            The Hilbert Transform provides the analytic signal via the
+            Fourier Transform, omitting negative frequencies. It allows
+            us to compute the instantaneous power signal of theta
+            frequency through time to evaluate whether theta oscillations
+            are regular and continuous across states.
+          </p>
+        </div>
+
+        <div class="method-item">
+          <div class="method-item-title"><em>Gamma Phase Synchronization</em></div>
+          <p class="method-item-body">
+            We extracted the gamma component of each region for the awake
+            state and plotted instantaneous phases on the same graph to
+            visualize overlap. We then plotted synchrony between every
+            pair of regions, plus average synchrony across all regions,
+            and repeated the analysis on anesthetized data. The mean
+            synchronization for each state quantifies whether the awake
+            signal exhibits higher synchrony, the central question for
+            whether gamma synchrony is indeed a basis for consciousness.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RESULTS / FIGURE ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>04</span> Brainwave Decomposition</div>
+      <h2 class="section-title">What each frequency band <em>contributes</em>, side by side.</h2>
+
+      <div class="prose">
+        <p>
+          The figure below shows the brainwave decomposition of the
+          temporal lobe signal for both states. Each row isolates a
+          single frequency band — delta, theta, alpha, beta, gamma —
+          allowing direct comparison between awake and anesthetized
+          conditions.
+        </p>
+      </div>
+
+      <figure class="figure">
+        <img src="../assets/images/oscillatory-temporal-lobe.png" alt="Brainwave decomposition of the temporal lobe signal, showing delta, theta, alpha, beta, and gamma bands compared between awake and anesthesia conditions" />
+        <figcaption class="figure-caption">
+          <strong>Fig. 1</strong>
+          Temporal lobe signal decomposed into delta, theta, alpha, beta, and gamma bands.
+          Awake (left) versus anesthesia (right). Delta dominates the anesthetized signal;
+          all other bands collapse in amplitude.
+        </figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>
+          After filtering the signal into its band components, the delta
+          component maintains higher amplitude in the anesthetized
+          signal. All other components are noticeably smaller in
+          amplitude when anesthetized. In the awake state, all frequency
+          bands contribute to the signal somewhat uniformly. From the
+          spectrogram and power spectral density we already know that
+          lower frequencies contribute most during both states, but the
+          decomposition clarifies that for the awake signal, every
+          frequency contributes more than its anesthetized counterpart
+          except for the delta component, consistent with the idea that
+          delta (slow waves) contribute most during anesthesia. This
+          pattern is also reflected in the occipital lobe.
+        </p>
+        <p>
+          In the cingulate region, each component appears to contribute
+          equally across both states. However, one of our hypotheses was
+          that the theta component would be regular and continuous in
+          the awake signal and would not show the same continuity in the
+          anesthetized signal. In the band-component plots, that
+          difference is not visually obvious. The next step is the
+          instantaneous power signal for theta oscillations specifically,
+          which provides a more direct test of theta continuity through
+          time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PAGINATION ─── -->
+  <div class="wrap">
+    <div class="pagination">
+      <a href="../index.html" class="pagination-back">Back to portfolio</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Christabelle Pabalan · 2026</span>
+    <span>Oscillatory Basis for Consciousness · Research excerpt</span>
+  </div>
+</footer>
+
+</body>
+</html>

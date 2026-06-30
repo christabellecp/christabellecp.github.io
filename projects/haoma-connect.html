@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haoma Connect · Christabelle Pabalan</title>
+<meta name="description" content="An integrated home health referral system that turned Medicare's Home Health Compare data into something a discharge planner can actually use. A team project led on the redesign by Christabelle Pabalan." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!--
+  IMAGE PATHS:
+  Currently linking the four screenshots straight from your Google Sites
+  CDN (lh3.googleusercontent.com). They will render fine, but once you
+  take down the Google Site the URLs may stop working.
+
+  Recommendation: right-click each image, save it into:
+    /assets/images/haoma-connect-1.png
+    /assets/images/haoma-connect-2.png
+    /assets/images/haoma-hhc-original.png
+    /assets/images/haoma-hhc-redesign.png
+
+  Then update the four <img src=...> tags below.
+-->
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #0F0E0C;
+    --bg-elevated:  #15130F;
+    --surface:      #1A1714;
+    --surface-hi:   #221E1A;
+    --border:       #2C2723;
+    --border-soft:  #211D1A;
+
+    --text:         #F2ECE0;
+    --text-soft:    #D8CFBC;
+    --text-muted:   #C2B6A0;
+    --text-dim:     #918876;
+
+    --accent:       #9C8DDB;  /* lavender for earlier research */
+    --amber:        #ECA253;
+
+    --max:          900px;
+    --gutter:       clamp(20px, 4vw, 56px);
+
+    --radius-lg:    6px;
+
+    --serif:        'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans:         'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono:         'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at top, rgba(156, 141, 219, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(236, 162, 83, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* ─── nav ─── */
+
+  .nav {
+    border-bottom: 1px solid var(--border-soft);
+    padding: 22px 0;
+    backdrop-filter: blur(8px);
+    background: rgba(15, 14, 12, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+  .nav-back {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-back::before { content: '←'; font-size: 13px; }
+  .nav-back:hover { color: var(--accent); }
+
+  .nav-mark {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  /* ─── hero ─── */
+
+  .hero {
+    padding: clamp(60px, 10vh, 110px) 0 clamp(40px, 7vh, 70px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); opacity: 0.6; }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    font-variation-settings: "SOFT" 60;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+
+  .hero-dek {
+    margin-top: 28px;
+    max-width: 640px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* ─── content sections ─── */
+
+  .section {
+    padding: clamp(48px, 8vh, 80px) 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .section-num span {
+    display: inline-block;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    border-radius: 100px;
+    padding: 2px 9px 1px;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .prose p {
+    margin-bottom: 1.2em;
+    color: var(--text-soft);
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose em { font-style: italic; color: var(--text); }
+  .prose strong { color: var(--text); font-weight: 500; }
+
+  /* ─── figure ─── */
+
+  .figure {
+    margin: 36px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+  }
+  .figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .figure-caption {
+    margin-top: 14px;
+    padding: 0 4px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .figure-caption strong {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  /* ─── before / after comparison ─── */
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 36px 0;
+  }
+  @media (max-width: 720px) {
+    .compare { grid-template-columns: 1fr; }
+  }
+  .compare-side {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .compare-side.after { border-left: 3px solid var(--accent); }
+  .compare-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  .compare-side.after .compare-label { color: var(--accent); }
+  .compare-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+
+  /* ─── design-decisions list ─── */
+
+  .design-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .design-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 18px 22px;
+  }
+  .design-item-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .design-item-title em { font-style: italic; color: var(--accent); }
+  .design-item-body {
+    color: var(--text-soft);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+
+  /* ─── pull quote ─── */
+
+  .pull {
+    margin: 36px 0;
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: var(--text);
+  }
+  .pull em { color: var(--accent); font-style: italic; }
+
+  /* ─── pagination & footer ─── */
+
+  .pagination {
+    padding: 48px 0 80px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .pagination-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 12px 0;
+    transition: color 0.15s ease, padding-left 0.15s ease;
+  }
+  .pagination-back::before { content: '←'; font-size: 16px; }
+  .pagination-back:hover { color: var(--accent); padding-left: 6px; }
+
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 24px 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  ::selection { background: var(--accent); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap-wide">
+    <a href="../index.html" class="nav-back">Portfolio</a>
+    <a href="../index.html" class="nav-mark">Christabelle Pabalan</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">Healthcare UX · Information Design · Cap Project</div>
+
+      <h1 class="hero-title"><em>Haoma</em> Connect</h1>
+
+      <p class="hero-dek">
+        A discharge planner has minutes to choose between dozens of home
+        health agencies, working from a federal data tool that was never
+        designed to be read quickly. We rebuilt that flow as an
+        integrated referral system.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Domain</span>
+          <span>Healthcare · Discharge Planning</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Team</span>
+          <span>Group of 7</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">My Role</span>
+          <span>Data Science · UI Redesign</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Stack</span>
+          <span>Chart.js · NLP backend</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 01: PROBLEM ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>01</span> The Problem</div>
+      <h2 class="section-title">The federal data exists. <em>It's just unreadable in the time you have to use it</em>.</h2>
+      <div class="prose">
+        <p>
+          When a patient is discharged from a hospital and needs ongoing
+          care at home, a discharge planner has to find them a home
+          health agency. That choice shapes everything that follows:
+          recovery quality, readmission risk, total cost of care, and
+          the patient's experience in their own home.
+        </p>
+        <p>
+          The data to inform that choice is already public. CMS
+          publishes quality metrics for every Medicare-certified agency
+          on Home Health Compare. But the interface buries the signal
+          under bulk text, undifferentiated rows of percentages, and
+          category labels that get lost as you scroll. Planners are
+          timed. They cannot, in practice, parse 30+ metrics across
+          multiple categories per agency, comparing several agencies at
+          once, in the window they have to decide.
+        </p>
+        <p>
+          Our group of seven set out to build the layer that should
+          have existed between this data and the people who actually
+          have to act on it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02: WHAT WE BUILT ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>02</span> What We Built</div>
+      <h2 class="section-title">An integrated <em>home health referral system</em>.</h2>
+      <div class="prose">
+        <p>
+          Haoma Connect is a referral system layered on top of the CMS
+          data. The core is a recommendation dashboard that gives
+          discharge planners personalized home health agency suggestions
+          for a particular patient, based on their diagnosis and care
+          needs. An NLP model on the backend matches patient context to
+          agency strengths and surfaces an overall score for each
+          candidate agency.
+        </p>
+      </div>
+
+      <figure class="figure">
+        <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDVRN_K6BPh7Kg-2dGewc-aw3L2HaZl2dlmkNYIx172PRHUlDohgr9Fyvsvgqow-jjRliiAg05sHXNy-AOAsbh3F9sOFjt9Ica3orOVEZR5J9aNckRghbOoJaUx8hVXlB9-8yP2ONeJUKWGM7B9VTwtHZ3xwkJvqEyxxElXNj6YMeDjzGcdL1v6YiLCFXW69cC22ITHJzu89qZLZ4RNmFP7cYlOW5UEjecCx0j37Cg=w1280" alt="Haoma Connect platform homepage showing the integrated home health referral system" />
+        <figcaption class="figure-caption">
+          <strong>Fig. 1</strong>
+          Haoma Connect platform homepage. A single interface for discharge planners, patients, and home health agencies.
+        </figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>
+          Beyond the recommendation engine, Haoma Connect functions as
+          a shared platform across all parties involved in a discharge:
+          hospital staff, patients, and home health agencies. Everyone
+          works against the same database, eliminating the discrepancies
+          that come from each side maintaining its own copy of the
+          information. And because the system ingests real-time
+          readmissions data, the recommendations improve as more
+          patients move through the platform.
+        </p>
+      </div>
+
+      <figure class="figure">
+        <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUAXh0flfpX6ZoPSZCJrLIovO5AbWc_1MdosEv5ao2G6tSYiU5EQZs79udRgbtx79Izfu21e7EXc41C-RSeyvxTelwsVXgpY6RDs5baC93ZXqL__eJTYqEPDwT67S1x3Rm9U49CrxWnkUTijX1Qlzyuwt9wBsCKygij1724xVzqXjLqfpYBnk-oiZPUKlqjCFd3tepUq_XO-WB-Ou0hTIFB05n-MhjyNRT6plUZO1L0=w1280" alt="Haoma Connect platform secondary screen showing integrated communication and case tracking" />
+        <figcaption class="figure-caption">
+          <strong>Fig. 2</strong>
+          A second view of the platform showing where the referral conversation lives between parties.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── 03: WHY REDESIGN HOME HEALTH COMPARE ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>03</span> Why Redesign Home Health Compare</div>
+      <h2 class="section-title">A page that asks the planner to <em>do all the parsing themselves</em>.</h2>
+      <div class="prose">
+        <p>
+          The CMS Home Health Compare page presents the same content
+          for every agency: a long sequence of survey questions, each
+          followed by a percentage. The categories of questions exist
+          on the page, but they get lost in the bulk of the text.
+          Percentages all look the same and read like a flat list.
+        </p>
+        <p>
+          In practice, a planner has to read each question, hold its
+          percentage in mind, scan to the next, and mentally aggregate
+          across categories. Doing this across several candidate
+          agencies, under time pressure, while talking to a patient
+          and their family, is not actually possible to do well.
+        </p>
+      </div>
+
+      <figure class="figure">
+        <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUA5UsHdf7oEku6MIGIWBnwZFS9c-yssMYmGoaQHqKtv1GsD0L8-8DzNG9SQQOctLDpChTqX3CZ7EnAgNiSjteUJiodMppXuWabPPp7hlfR99QmoHJA--YenNdeLYYeAWXFyfOpjPjgFddwB8onFPE4-rcLPwnukbohfXGauR8gjS_rKbU_zDcAKuo1qkyMVDSxU7Nw0n4q3p0a3OU6CQn_jMOEAT-Z1uH9-0ryPNYM=w1280" alt="The original CMS Home Health Compare page showing a long sequence of survey questions and percentages" />
+        <figcaption class="figure-caption">
+          <strong>Fig. 3</strong>
+          The original Home Health Compare. Categorical structure is technically present but visually lost; percentages read as a flat list rather than as a comparable set.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ─── 04: THE REDESIGN ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>04</span> The Redesign</div>
+      <h2 class="section-title">Optimize for the <em>speed and accuracy</em> of a single decision.</h2>
+      <div class="prose">
+        <p>
+          I redesigned the page so the structure that was already in
+          the data would actually show up in the interface. The
+          decisions:
+        </p>
+      </div>
+
+      <div class="design-list">
+
+        <div class="design-item">
+          <div class="design-item-title">A single <em>recommendation score</em> at the top</div>
+          <p class="design-item-body">
+            The score is tied directly to our NLP backend's match
+            between the patient's diagnosis and care needs and the
+            agency's strengths. It's the answer the planner is actually
+            looking for, surfaced before everything that justifies it.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <div class="design-item-title"><em>Bar charts</em> for grouped categories</div>
+          <p class="design-item-body">
+            Categories with multiple sub-metrics collapse into a single
+            bar chart, so a planner can see how an agency performs
+            across a whole category at a glance instead of summing
+            percentages in their head. Exact percentages are accessible
+            on hover.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <div class="design-item-title"><em>Donut charts</em> for individual metrics</div>
+          <p class="design-item-body">
+            The remaining questions use donut charts, keeping the
+            percentage visible (it still matters) but giving each one
+            visual variety so a dozen of them don't blur into one
+            another.
+          </p>
+        </div>
+
+        <div class="design-item">
+          <div class="design-item-title">Bolded <em>category labels</em> on every question</div>
+          <p class="design-item-body">
+            A planner can scan first by topic and then drill in,
+            instead of reading the question text in order to find out
+            what kind of metric it is.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="compare">
+        <div class="compare-side">
+          <div class="compare-label">Before · CMS Home Health Compare</div>
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUA5UsHdf7oEku6MIGIWBnwZFS9c-yssMYmGoaQHqKtv1GsD0L8-8DzNG9SQQOctLDpChTqX3CZ7EnAgNiSjteUJiodMppXuWabPPp7hlfR99QmoHJA--YenNdeLYYeAWXFyfOpjPjgFddwB8onFPE4-rcLPwnukbohfXGauR8gjS_rKbU_zDcAKuo1qkyMVDSxU7Nw0n4q3p0a3OU6CQn_jMOEAT-Z1uH9-0ryPNYM=w1280" alt="The original Home Health Compare page" />
+        </div>
+        <div class="compare-side after">
+          <div class="compare-label">After · Redesigned dashboard</div>
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDnQyEwACJebTt9Cj5MZGh5J2QcNJ5Loppvmq2hAENldL0Qs9TZ8NYpZSrTNE16rUt4Jkz-e5xcf6Lod6Adb3BdidjepbNPaP351sjriB8zQriV-hVxcuXqX0o6MhzvBSt6VGFDjek7t6JdVLfdVa-R7RRRAU4rGM9sdA-twVGcIJpCGSm119UCgaCEyD2-EMH11tgxPTJawRhlGkyscHGSwxv33UAhWFEk7F7dckA=w1280" alt="The redesigned Home Health Compare dashboard with bar charts, donut charts, and a recommendation score" />
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          <strong>The tradeoff we accepted:</strong> bar charts hide
+          exact percentages by default. You can hover for them, but at
+          a glance you're reading shape, not numbers. That's the right
+          tradeoff for the use case. We weren't optimizing for perfect
+          granularity. We were optimizing for the speed and accuracy
+          of a single decision, made under time pressure, by someone
+          who needs to be confident in the answer.
+        </p>
+        <p>
+          Built in Chart.js.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 05: REFLECTION ─── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-num"><span>05</span> Reflection</div>
+
+      <div class="pull">
+        The data was already <em>public and reasonably complete</em>.
+        The work wasn't to gather more of it. The work was to make
+        what already existed <em>legible to the person who actually
+        has to act on it</em>.
+      </div>
+
+      <div class="prose">
+        <p>
+          This is, in retrospect, a pattern I have come back to
+          repeatedly since: in clinical AI at Qventus, in the NLP work
+          at Headspace on session notes and therapist link usage, and
+          in the Responsible AI work that ties technical systems back
+          to the people they serve. The most valuable thing is often
+          not the new model. It's reading the data the system already
+          has well enough that someone downstream can use it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PAGINATION ─── -->
+  <div class="wrap">
+    <div class="pagination">
+      <a href="../index.html" class="pagination-back">Back to portfolio</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap-wide">
+    <span>© Christabelle Pabalan · 2026</span>
+    <span>Haoma Connect · Group project, redesign by Christabelle</span>
+  </div>
+</footer>
+
+</body>
+</html>
