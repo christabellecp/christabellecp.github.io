@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- ============ BACKGROUND ============ -->
+  <rect width="1280" height="720" fill="#0F0E0C"/>
+
+  <defs>
+    <radialGradient id="glow" cx="25%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#9C8DDB" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#9C8DDB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+
+  <!-- ============ LEFT: STORY ============ -->
+
+  <!-- Eyebrow -->
+  <line x1="60" y1="80" x2="100" y2="80" stroke="#9C8DDB" stroke-width="1.5" opacity="0.7"/>
+  <text x="112" y="84" fill="#918876"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="12" letter-spacing="1.5">PARKINSON'S CLUSTERING · COVID-19 IMPACT</text>
+
+  <!-- Lede -->
+  <text x="60" y="170" fill="#C2B6A0"
+        font-family="Georgia, Cambria, serif"
+        font-size="22" font-style="italic">An unsupervised clustering</text>
+  <text x="60" y="202" fill="#C2B6A0"
+        font-family="Georgia, Cambria, serif"
+        font-size="22" font-style="italic">of Parkinson's patients</text>
+  <text x="60" y="234" fill="#C2B6A0"
+        font-family="Georgia, Cambria, serif"
+        font-size="22" font-style="italic">surfaced six distinct cohorts.</text>
+
+  <!-- Lede continuation -->
+  <text x="60" y="324" fill="#F2ECE0"
+        font-family="Georgia, Cambria, serif"
+        font-size="28" font-weight="400">In Group 4:</text>
+
+  <!-- HUGE 13/19 -->
+  <text x="60" y="470" fill="#9C8DDB"
+        font-family="Georgia, Cambria, serif"
+        font-size="140" font-weight="400" font-style="italic">13<tspan fill="#6E6655" font-style="normal">/</tspan>19</text>
+
+  <!-- Sub-finding -->
+  <text x="60" y="540" fill="#D8CFBC"
+        font-family="Georgia, Cambria, serif"
+        font-size="22">symptoms worsened at higher rates</text>
+  <text x="60" y="570" fill="#D8CFBC"
+        font-family="Georgia, Cambria, serif"
+        font-size="22">than the cohort average during COVID-19.</text>
+
+  <!-- Bottom annotation -->
+  <line x1="60" y1="650" x2="100" y2="650" stroke="#918876" stroke-width="1" opacity="0.6"/>
+  <text x="112" y="654" fill="#918876"
+        font-family="ui-monospace, monospace"
+        font-size="10" letter-spacing="1.5">GROUP 4 ALSO MOST LIKELY TO SELF-ISOLATE · 21%</text>
+
+  <!-- ============ RIGHT: CHART PANEL ============ -->
+
+  <rect x="600" y="60" width="620" height="600" rx="6"
+        fill="#1A1714" stroke="#2C2723" stroke-width="1"/>
+
+  <text x="620" y="95" fill="#C2B6A0"
+        font-family="ui-monospace, monospace"
+        font-size="11" letter-spacing="2">% SYMPTOMS WORSENED · GROUP 4 VS AVERAGE</text>
+
+  <!-- Vertical zero-axis line -->
+  <line x1="785" y1="125" x2="785" y2="585" stroke="#2C2723" stroke-width="1"/>
+
+  <!-- Row 1: Muscle ache (G4 22%, Avg 5%) -->
+  <text x="775" y="156" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Muscle ache</text>
+  <rect x="785" y="143" width="370" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="161" width="84"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1170" y="155" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">22%</text>
+
+  <!-- Row 2: Sleepy (G4 22%, Avg 4%) -->
+  <text x="775" y="213" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Sleepy</text>
+  <rect x="785" y="200" width="370" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="218" width="67"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1170" y="212" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">22%</text>
+
+  <!-- Row 3: Congested (G4 22%, Avg 7%) -->
+  <text x="775" y="270" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Congested</text>
+  <rect x="785" y="257" width="370" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="275" width="118" height="6"  rx="1" fill="#6E6655"/>
+  <text x="1170" y="269" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">22%</text>
+
+  <!-- Row 4: Tired (G4 21%, Avg 5%) -->
+  <text x="775" y="327" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Tired</text>
+  <rect x="785" y="314" width="353" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="332" width="84"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1153" y="326" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">21%</text>
+
+  <!-- Row 5: Sweating (G4 14%, Avg 4%) -->
+  <text x="775" y="384" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Sweating</text>
+  <rect x="785" y="371" width="235" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="389" width="67"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1035" y="383" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">14%</text>
+
+  <!-- Row 6: Short breath (G4 14%, Avg 4%) -->
+  <text x="775" y="441" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Short breath</text>
+  <rect x="785" y="428" width="235" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="446" width="67"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1035" y="440" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">14%</text>
+
+  <!-- Row 7: Joint pain (G4 13%, Avg 2%) -->
+  <text x="775" y="498" text-anchor="end" fill="#D8CFBC"
+        font-family="Georgia, serif" font-size="14">Joint pain</text>
+  <rect x="785" y="485" width="218" height="14" rx="2" fill="#9C8DDB"/>
+  <rect x="785" y="503" width="34"  height="6"  rx="1" fill="#6E6655"/>
+  <text x="1018" y="497" fill="#9C8DDB"
+        font-family="ui-monospace, monospace" font-size="12" font-weight="500">13%</text>
+
+  <!-- Legend -->
+  <g transform="translate(620, 615)">
+    <rect width="14" height="10" rx="2" fill="#9C8DDB"/>
+    <text x="22" y="9" fill="#D8CFBC"
+          font-family="ui-monospace, monospace" font-size="11">Group 4</text>
+
+    <rect x="115" y="4" width="14" height="4" rx="1" fill="#6E6655"/>
+    <text x="137" y="9" fill="#D8CFBC"
+          font-family="ui-monospace, monospace" font-size="11">Cohort average</text>
+  </g>
+</svg>
