@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1400 510" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#4DD4B5" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arr-t2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#257D7C"/>
+    </marker>
+    <marker id="arr-s2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8FCB95"/>
+    </marker>
+    <marker id="arr-a2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#CB6A3D"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="510" fill="#171410"/>
+  <rect width="1400" height="510" fill="url(#bg2)"/>
+
+  <!-- EYEBROW -->
+  <line x1="48" y1="40" x2="76" y2="40" stroke="#257D7C" stroke-width="1.5" opacity="0.8"/>
+  <text x="88" y="44" fill="#9F9683" font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">CONTENT GAP DISCOVERY · HEADSPACE · THERAPIST LINK ANALYSIS</text>
+
+  <!-- DIVIDERS -->
+  <line x1="400" y1="62" x2="400" y2="486" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+  <line x1="840" y1="62" x2="840" y2="486" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+
+  <!-- SECTION LABELS -->
+  <rect x="48" y="62" width="330" height="28" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="213" y="80" text-anchor="middle" fill="#257D7C" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">THERAPIST LINKS SENT</text>
+
+  <rect x="420" y="62" width="398" height="28" rx="4" fill="#251E14" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="619" y="80" text-anchor="middle" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">IN-HOUSE vs EXTERNAL BREAKDOWN</text>
+
+  <rect x="860" y="62" width="492" height="28" rx="4" fill="#182018" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="1106" y="80" text-anchor="middle" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">TOPIC CLUSTERS · CONTENT GAPS</text>
+
+  <!-- ══ SECTION 1: URLs sent by therapists ══ -->
+
+  <text x="58" y="112" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">SAMPLE · LINKS SHARED WITH PATIENTS</text>
+  <line x1="58" y1="118" x2="388" y2="118" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- URL items -->
+  <g transform="translate(58, 126)" font-family="ui-monospace,monospace" font-size="11">
+
+    <!-- External -->
+    <rect x="0" y="0" width="322" height="40" rx="4" fill="#1A1714" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="0" width="3" height="40" rx="2" fill="#CB6A3D"/>
+    <text x="14" y="14" fill="#CB6A3D" font-size="9" letter-spacing="0.5">EXTERNAL</text>
+    <text x="14" y="30" fill="#CDC1A9">nytimes.com/health/anxiety-tips</text>
+
+    <rect x="0" y="48" width="322" height="40" rx="4" fill="#1A1714" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="48" width="3" height="40" rx="2" fill="#8FCB95"/>
+    <text x="14" y="62" fill="#8FCB95" font-size="9" letter-spacing="0.5">IN-HOUSE</text>
+    <text x="14" y="78" fill="#CDC1A9">headspace.com/sleep/wind-down</text>
+
+    <rect x="0" y="96" width="322" height="40" rx="4" fill="#1A1714" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="96" width="3" height="40" rx="2" fill="#CB6A3D"/>
+    <text x="14" y="110" fill="#CB6A3D" font-size="9" letter-spacing="0.5">EXTERNAL</text>
+    <text x="14" y="126" fill="#CDC1A9">webmd.com/depression/guide</text>
+
+    <rect x="0" y="144" width="322" height="40" rx="4" fill="#1A1714" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="144" width="3" height="40" rx="2" fill="#CB6A3D"/>
+    <text x="14" y="158" fill="#CB6A3D" font-size="9" letter-spacing="0.5">EXTERNAL</text>
+    <text x="14" y="174" fill="#CDC1A9">psychology.org/burnout-resources</text>
+
+    <rect x="0" y="192" width="322" height="40" rx="4" fill="#1A1714" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="192" width="3" height="40" rx="2" fill="#CB6A3D"/>
+    <text x="14" y="206" fill="#CB6A3D" font-size="9" letter-spacing="0.5">EXTERNAL</text>
+    <text x="14" y="222" fill="#CDC1A9">mindful.org/breathing-exercises</text>
+
+    <rect x="0" y="240" width="322" height="40" rx="4" fill="#1A1714" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="240" width="3" height="40" rx="2" fill="#8FCB95"/>
+    <text x="14" y="254" fill="#8FCB95" font-size="9" letter-spacing="0.5">IN-HOUSE</text>
+    <text x="14" y="270" fill="#CDC1A9">headspace.com/meditation/stress</text>
+
+    <rect x="0" y="288" width="322" height="40" rx="4" fill="#1A1714" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.6"/>
+    <rect x="0" y="288" width="3" height="40" rx="2" fill="#CB6A3D"/>
+    <text x="14" y="302" fill="#CB6A3D" font-size="9" letter-spacing="0.5">EXTERNAL</text>
+    <text x="14" y="318" fill="#CDC1A9">sleepfoundation.org/insomnia</text>
+  </g>
+
+  <text x="58" y="470" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">+ thousands more analyzed across all therapist-patient sessions</text>
+
+  <!-- arrows -->
+  <line x1="394" y1="260" x2="424" y2="260" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-t2)"/>
+
+  <!-- ══ SECTION 2: In-house vs External ══ -->
+
+  <!-- Big donut-style breakdown -->
+  <text x="428" y="112" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">LINK SOURCE BREAKDOWN</text>
+  <line x1="428" y1="118" x2="828" y2="118" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Visual bar -->
+  <rect x="428" y="130" width="390" height="48" rx="6" fill="#1A1714" stroke="#2D2820" stroke-width="1"/>
+  <!-- External fill 72% -->
+  <rect x="430" y="132" width="278" height="44" rx="5" fill="#CB6A3D" opacity="0.75"/>
+  <!-- In-house fill 28% -->
+  <rect x="712" y="132" width="104" height="44" rx="5" fill="#8FCB95" opacity="0.75"/>
+  <text x="520" y="161" text-anchor="middle" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="18" font-weight="700">72%</text>
+  <text x="762" y="161" text-anchor="middle" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="600">28%</text>
+
+  <!-- Legend -->
+  <rect x="428" y="188" width="14" height="14" rx="2" fill="#CB6A3D"/>
+  <text x="448" y="200" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="11">External sources (72%)</text>
+  <rect x="428" y="210" width="14" height="14" rx="2" fill="#8FCB95"/>
+  <text x="448" y="222" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="11">Headspace in-house (28%)</text>
+
+  <!-- Key finding callout -->
+  <rect x="428" y="244" width="390" height="68" rx="6" fill="#251E14" stroke="#CB6A3D" stroke-width="1.5"/>
+  <text x="448" y="264" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">KEY FINDING</text>
+  <text x="448" y="284" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Therapists rely on external content</text>
+  <text x="448" y="302" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">for 72% of patient-facing resources.</text>
+
+  <!-- Impact badge -->
+  <rect x="428" y="326" width="390" height="56" rx="6" fill="#182018" stroke="#8FCB95" stroke-width="1"/>
+  <text x="448" y="346" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OUTCOME</text>
+  <text x="448" y="364" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">Analysis circulated company-wide and directly</text>
+  <text x="448" y="380" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">shaped in-house content production priorities.</text>
+
+  <!-- Arrow to clusters -->
+  <line x1="834" y1="260" x2="864" y2="260" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-s2)"/>
+
+  <!-- ══ SECTION 3: Topic Clusters & Gaps ══ -->
+
+  <text x="872" y="112" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">EXTERNAL LINK TOPIC CLUSTERS · IDENTIFIED GAPS</text>
+  <line x1="872" y1="118" x2="1344" y2="118" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Cluster 1: Sleep / Insomnia -->
+  <rect x="872" y="128" width="456" height="66" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <rect x="872" y="128" width="456" height="4" rx="2" fill="#257D7C"/>
+  <text x="892" y="148" fill="#257D7C" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">CLUSTER 01 · LARGEST</text>
+  <text x="892" y="166" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="500">Sleep &amp; Insomnia Guidance</text>
+  <rect x="1222" y="136" width="90" height="20" rx="10" fill="#CB6A3D" fill-opacity="0.2" stroke="#CB6A3D" stroke-width="0.8"/>
+  <text x="1267" y="150" text-anchor="middle" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9">GAP · HIGH</text>
+  <text x="892" y="184" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">insomnia · wind-down routines · sleep hygiene · CBT-I techniques</text>
+
+  <!-- Cluster 2: Anxiety / CBT -->
+  <rect x="872" y="204" width="456" height="66" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <rect x="872" y="204" width="456" height="4" rx="2" fill="#257D7C"/>
+  <text x="892" y="224" fill="#257D7C" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">CLUSTER 02</text>
+  <text x="892" y="242" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="500">Anxiety &amp; CBT Techniques</text>
+  <rect x="1222" y="212" width="90" height="20" rx="10" fill="#CB6A3D" fill-opacity="0.2" stroke="#CB6A3D" stroke-width="0.8"/>
+  <text x="1267" y="226" text-anchor="middle" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9">GAP · HIGH</text>
+  <text x="892" y="260" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">breathing exercises · grounding · thought reframing · panic response</text>
+
+  <!-- Cluster 3: Burnout -->
+  <rect x="872" y="280" width="456" height="66" rx="6" fill="#1E2A28" stroke="#9C8DDB" stroke-width="1.5"/>
+  <rect x="872" y="280" width="456" height="4" rx="2" fill="#9C8DDB"/>
+  <text x="892" y="300" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">CLUSTER 03</text>
+  <text x="892" y="318" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="500">Burnout &amp; Work-Life Balance</text>
+  <rect x="1204" y="288" width="108" height="20" rx="10" fill="#9C8DDB" fill-opacity="0.15" stroke="#9C8DDB" stroke-width="0.8"/>
+  <text x="1258" y="302" text-anchor="middle" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9">GAP · MEDIUM</text>
+  <text x="892" y="336" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">work stress · boundaries · recovery · energy management</text>
+
+  <!-- Cluster 4: Depression -->
+  <rect x="872" y="356" width="456" height="66" rx="6" fill="#1E2A28" stroke="#9C8DDB" stroke-width="1.5"/>
+  <rect x="872" y="356" width="456" height="4" rx="2" fill="#9C8DDB"/>
+  <text x="892" y="376" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">CLUSTER 04</text>
+  <text x="892" y="394" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="500">Depression &amp; Mood Support</text>
+  <rect x="1204" y="364" width="108" height="20" rx="10" fill="#9C8DDB" fill-opacity="0.15" stroke="#9C8DDB" stroke-width="0.8"/>
+  <text x="1258" y="378" text-anchor="middle" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9">GAP · MEDIUM</text>
+  <text x="892" y="412" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">low mood · motivation · behavioral activation · journaling</text>
+
+  <!-- Bottom summary -->
+  <rect x="872" y="434" width="456" height="56" rx="6" fill="#1A1A20" stroke="#6B6158" stroke-width="0.8"/>
+  <text x="892" y="448" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">METHOD</text>
+  <text x="952" y="448" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">URL extraction · domain classification</text>
+  <text x="952" y="462" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">LDA topic clustering · gap scoring</text>
+  <text x="892" y="476" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">Topics ranked by external link frequency vs in-house coverage depth</text>
+</svg>

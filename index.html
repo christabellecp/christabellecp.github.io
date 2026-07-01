@@ -11,32 +11,35 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,30..100;1,9..144,300..600,30..100&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* warm-toned dark palette, not flat black */
-    --bg:           #0F0E0C;
-    --bg-elevated:  #15130F;
-    --surface:      #1A1714;
-    --surface-hi:   #221E1A;
-    --border:       #2C2723;
-    --border-soft:  #211D1A;
+    /* warm dark palette, richer and deeper */
+    --bg:           #171410;
+    --bg-elevated:  #1E1A14;
+    --surface:      #25201A;
+    --surface-hi:   #2D2720;
+    --border:       #3E3830;
+    --border-soft:  #2D2820;
 
-    --text:         #F2ECE0;
-    --text-soft:    #D8CFBC;  /* readable secondary */
-    --text-muted:   #C2B6A0;  /* readable de-emphasized */
-    --text-dim:     #918876;  /* labels, captions */
+    --text:         #F6F1E8;
+    --text-soft:    #E4DAC5;
+    --text-muted:   #CDC1A9;
+    --text-dim:     #9F9683;
 
-    /* section accents, vivid and saturated */
-    --sage:         #8FCB95;  /* clinical AI */
-    --teal:         #4DD4B5;  /* mental health ML */
-    --amber:        #ECA253;  /* hero / writing */
-    --lavender:     #9C8DDB;  /* earlier research */
-    --terracotta:   #E88468;  /* ventures */
-    --cream:        #EBC97F;  /* writing */
+    /* swatch palette */
+    --teal:         #257D7C;  /* Iridescent Teal, primary accent */
+    --teal-light:   #4DD4B5;  /* lighter teal for small accents */
+    --emerald:      #2C6E49;  /* Emerald Gloss */
+    --amber:        #CB6A3D;  /* Amber Feathers */
+    --rust:         #A24E2E;  /* Rusty Brown Side */
+    --sage:         #8FCB95;
+    --lavender:     #9C8DDB;
+    --terracotta:   #E88468;
+    --cream:        #EBC97F;
 
     --max:          1100px;
     --gutter:       clamp(20px, 4vw, 56px);
@@ -45,6 +48,7 @@
     --radius-lg:    6px;
 
     --serif:        'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --geometric:    'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     --sans:         'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     --mono:         'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
   }
@@ -59,11 +63,12 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    font-weight: 400;
-    line-height: 1.65;
-    font-size: 15.5px;
+    font-weight: 450;
+    line-height: 1.7;
+    font-size: 16px;
     min-height: 100vh;
     overflow-x: hidden;
+    font-feature-settings: "ss01", "ss03", "cv11";
   }
 
   /* subtle film grain background, restraint */
@@ -72,8 +77,8 @@
     position: fixed;
     inset: 0;
     background-image:
-      radial-gradient(ellipse at top, rgba(212, 166, 114, 0.04) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(159, 181, 146, 0.03) 0%, transparent 50%);
+      radial-gradient(ellipse at top left, rgba(37, 125, 124, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(37, 125, 124, 0.05) 0%, transparent 55%);
     pointer-events: none;
     z-index: 0;
   }
@@ -129,7 +134,7 @@
   }
   .nav-mark::after {
     content: '*';
-    color: var(--amber);
+    color: var(--teal);
     margin-left: 2px;
     font-style: normal;
   }
@@ -158,58 +163,64 @@
   /* ─── hero ─── */
 
   .hero {
-    padding: clamp(72px, 14vh, 140px) 0 clamp(60px, 10vh, 100px);
+    padding: clamp(56px, 10vh, 100px) 0 clamp(48px, 8vh, 80px);
     border-bottom: 1px solid var(--border-soft);
   }
   .hero-layout {
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 1fr 400px;
     gap: 56px;
     align-items: start;
   }
   @media (max-width: 860px) {
     .hero-layout { grid-template-columns: 1fr; gap: 36px; }
     .hero-photo-col { order: -1; }
-    .hero-photo { max-width: 260px; }
+    .hero-photo { max-width: 280px; }
   }
   .hero-left { display: flex; flex-direction: column; }
 
-  .hero-photo-col {
+  .hero-eyebrow {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding-top: 8px;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 28px;
   }
-  .hero-photo {
-    width: 100%;
-    max-width: 360px;
-    aspect-ratio: 4 / 5;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 3px solid var(--amber);
-    box-shadow: 10px 10px 0 var(--terracotta);
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--teal);
+    opacity: 0.7;
   }
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
+  .hero-name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(3.4rem, 9vw, 6.6rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    font-variation-settings: "SOFT" 60;
   }
+  .hero-name em { font-style: italic; font-weight: 300; color: var(--text); }
 
+  /* Teal text block */
   .hero-tagline-block {
-    margin-top: 36px;
-    background: var(--amber);
+    margin-top: 32px;
+    background: var(--teal);
     padding: 26px 30px;
     border-radius: 4px;
-    max-width: 640px;
   }
   .hero-tagline-block p {
     font-family: var(--sans);
-    font-weight: 400;
+    font-weight: 450;
     font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     line-height: 1.65;
-    color: rgba(20, 16, 10, 0.88);
+    color: rgba(255,255,255,0.96);
     margin: 0;
   }
 
@@ -222,7 +233,7 @@
     font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--teal-light);
   }
   .hero-role em {
     font-family: var(--serif);
@@ -233,57 +244,19 @@
     color: var(--text-soft);
   }
 
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 36px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--amber);
-    opacity: 0.6;
-  }
-  .hero-name {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(3.2rem, 9vw, 6.2rem);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    color: var(--text);
-    font-variation-settings: "SOFT" 60;
-  }
-  .hero-name em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--text);
-  }
-
   .hero-meta {
-    margin-top: 48px;
+    margin-top: 28px;
     display: flex;
     flex-wrap: wrap;
-    gap: 28px 36px;
+    gap: 18px 28px;
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.06em;
     color: var(--text-muted);
   }
-  .hero-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
   .hero-meta-label {
     font-size: 10px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
@@ -295,7 +268,32 @@
     padding-bottom: 1px;
     transition: border-color 0.15s ease, color 0.15s ease;
   }
-  .hero-meta-val a:hover { border-color: var(--amber); color: var(--amber); }
+  .hero-meta-val a:hover { border-color: var(--teal); color: var(--teal-light); }
+
+  /* Photo column */
+  .hero-photo-col {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+  .hero-photo {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid var(--amber);
+    box-shadow: 10px 10px 0 var(--rust);
+    position: relative;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
 
   /* ─── intro / about ─── */
 
@@ -332,14 +330,15 @@
   }
   .intro-body {
     font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
-    line-height: 1.55;
+    font-weight: 450;
+    font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+    line-height: 1.6;
     color: var(--text);
     max-width: 640px;
   }
   .intro-body p + p { margin-top: 1.2em; }
-  .intro-body em { color: var(--amber); font-style: italic; }
+  .intro-body em { color: var(--teal); font-style: italic; }
+  #about .intro-body { font-size: clamp(1rem, 1.3vw, 1.15rem); }
 
   /* ─── work section ─── */
 
@@ -420,7 +419,7 @@
     padding: 28px 30px 26px;
     min-height: 0;
   }
-  .card-deep .card-title { font-size: 1.65rem; max-width: 720px; }
+  .card-deep .card-title { font-size: 1.55rem; max-width: 720px; letter-spacing: -0.02em; }
   .card-deep .card-fragment { max-width: 680px; }
   .card-deep .card-desc { max-width: 680px; font-size: 15px; }
 
@@ -454,15 +453,12 @@
   }
   .bucket-body strong { color: var(--text); font-weight: 500; }
 
+  /* Card base, see light card override block below */
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: var(--radius-lg);
     padding: 24px 24px 22px;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     text-decoration: none;
-    color: inherit;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -499,16 +495,7 @@
     );
     pointer-events: none;
   }
-  a.card:hover {
-    background: var(--surface-hi);
-    border-color: var(--border);
-    border-left-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  a.card:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-  }
+  /* hover and focus now in light card block */
 
   .card-tags {
     display: flex;
@@ -534,21 +521,21 @@
   }
 
   .card-title {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: 1.45rem;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    font-family: var(--geometric);
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     color: var(--text);
     margin-top: 4px;
   }
-  .card-title em { font-style: italic; color: var(--accent); }
+  .card-title em { font-style: italic; font-weight: 500; color: var(--accent); }
 
   .card-fragment {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.05rem;
     line-height: 1.5;
     color: var(--text-soft);
     border-left: 1px solid var(--border);
@@ -556,8 +543,8 @@
   }
 
   .card-desc {
-    font-size: 14.5px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.65;
     color: var(--text-soft);
   }
 
@@ -701,7 +688,7 @@
     color: var(--text);
     max-width: 540px;
   }
-  .contact-lede em { font-style: italic; color: var(--amber); }
+  .contact-lede em { font-style: italic; color: var(--teal); }
 
   .contact-links {
     list-style: none;
@@ -723,7 +710,7 @@
     transition: color 0.15s ease, padding-left 0.15s ease;
   }
   .contact-links a:hover {
-    color: var(--amber);
+    color: var(--teal);
     padding-left: 8px;
   }
   .contact-links a span {
@@ -749,6 +736,409 @@
     flex-wrap: wrap;
   }
 
+  /* ─── Dark card surfaces, matching site theme ─── */
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 24px 24px 22px;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 220px;
+    overflow: hidden;
+  }
+  a.card:hover {
+    background: var(--surface-hi);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--accent), inset 0 0 0 1px rgba(255,255,255,0.03);
+    transform: translateY(-2px);
+  }
+  a.card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* tags */
+  .card .card-tags { color: var(--text-dim); }
+  .card .card-tag { border-color: var(--border); color: var(--text-dim); }
+  .card .card-tag.lead {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    font-weight: 500;
+  }
+  /* text */
+  .card .card-title { color: var(--text); }
+  .card .card-fragment { color: var(--text-muted); border-left-color: var(--border); }
+  .card .card-desc { color: var(--text-soft); }
+  .card .card-metric { border-top-color: var(--border-soft); }
+  .card .card-metric-label { color: var(--text-dim); }
+  .card .card-link { border-top-color: var(--border-soft); }
+
+  /* bucket cards on dark background */
+  .card-buckets {
+    border-top-color: var(--border-soft);
+  }
+  .card-bucket {
+    background: color-mix(in srgb, var(--accent) 5%, var(--bg-elevated));
+    border-color: color-mix(in srgb, var(--accent) 20%, var(--border-soft));
+  }
+  .card-bucket .bucket-body { color: var(--text-soft); }
+  .card-bucket strong { color: var(--text); }
+
+  /* preview vignette for dark cards */
+  .card-preview::after {
+    background: linear-gradient(to bottom, transparent 55%, rgba(37, 32, 26, 0.6) 100%);
+  }
+
+  /* carousel cards also dark */
+  .carousel-card {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+  }
+  .carousel-slide:hover .carousel-card {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+  }
+  .carousel-title { color: var(--text) !important; }
+  .carousel-meta { color: var(--text-dim) !important; }
+  .carousel-meta-dot { background: var(--text-dim) !important; }
+
+  /* ─── Writing carousel ─── */
+  .carousel-wrap {
+    margin-top: 56px;
+    position: relative;
+  }
+  .carousel-track-outer {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+  .carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  .carousel-slide {
+    flex: 0 0 calc(33.333% - 11px);
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+  }
+  @media (max-width: 900px) {
+    .carousel-slide { flex: 0 0 calc(50% - 8px); }
+  }
+  @media (max-width: 600px) {
+    .carousel-slide { flex: 0 0 100%; }
+  }
+
+  .carousel-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .carousel-slide:hover .carousel-card {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    transform: translateY(-2px);
+  }
+
+  .carousel-thumb {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 28px 24px;
+    flex-shrink: 0;
+  }
+  .carousel-thumb-title {
+    font-family: var(--geometric);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: rgba(255,255,255,0.95);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.01em;
+  }
+  .carousel-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+  }
+
+  .carousel-body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .carousel-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--card-text-dim);
+  }
+  .carousel-meta-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--card-text-dim);
+    flex-shrink: 0;
+  }
+  .carousel-title {
+    font-family: var(--geometric);
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--card-text);
+    letter-spacing: -0.01em;
+  }
+  .carousel-title em { font-style: italic; }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    border: none;
+    padding: 0;
+  }
+  .carousel-dot.active {
+    background: var(--teal);
+    transform: scale(1.3);
+  }
+  .carousel-arrows {
+    display: flex;
+    gap: 8px;
+  }
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    line-height: 1;
+  }
+  .carousel-arrow:hover {
+    background: var(--surface-hi);
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+  /* ─── Publication cards ─── */
+  .pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .pub-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px 32px;
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    position: relative;
+  }
+  .pub-card.featured {
+    border-left: 3px solid var(--teal);
+    background: color-mix(in srgb, var(--teal) 5%, var(--surface));
+  }
+  .pub-card:hover {
+    background: var(--surface-hi);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 680px) {
+    .pub-card { grid-template-columns: 1fr; }
+  }
+
+  .pub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: color-mix(in srgb, var(--teal) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--teal) 40%, transparent);
+    padding: 3px 10px 2px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+    width: fit-content;
+  }
+  .pub-badge.preprint {
+    color: var(--text-dim);
+    background: color-mix(in srgb, var(--text-dim) 8%, transparent);
+    border-color: color-mix(in srgb, var(--text-dim) 25%, transparent);
+  }
+  .pub-badge.journal {
+    color: var(--sage);
+    background: color-mix(in srgb, var(--sage) 10%, transparent);
+    border-color: color-mix(in srgb, var(--sage) 35%, transparent);
+  }
+
+  .pub-title {
+    font-family: var(--geometric);
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .pub-title em { font-style: italic; color: var(--teal); }
+
+  .pub-authors {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .pub-authors strong {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .pub-meta-item { display: flex; align-items: center; gap: 5px; }
+  .pub-meta-item span { color: var(--text-muted); }
+
+  .pub-contribution {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: color-mix(in srgb, var(--teal) 6%, transparent);
+    border-left: 2px solid var(--teal);
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-soft);
+  }
+  .pub-contribution strong {
+    color: var(--teal);
+    font-weight: 500;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pub-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    padding-top: 4px;
+    min-width: 120px;
+  }
+  .pub-if {
+    text-align: right;
+  }
+  .pub-if-val {
+    font-family: var(--geometric);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--teal);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .pub-if-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+  .pub-altmetric {
+    text-align: right;
+  }
+  .pub-altmetric-val {
+    font-family: var(--geometric);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--amber);
+    line-height: 1;
+  }
+  .pub-altmetric-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 3px;
+  }
+  .pub-link {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .pub-link:hover { color: var(--teal-light); }
   /* ─── accessibility ─── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -759,12 +1149,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--teal);
     outline-offset: 3px;
   }
 
   /* selection */
-  ::selection { background: var(--amber); color: var(--bg); }
+  ::selection { background: var(--teal); color: var(--bg); }
 </style>
 </head>
 <body>
@@ -775,6 +1165,7 @@
   <div class="wrap">
     <a href="#" class="nav-mark">Christabelle Pabalan</a>
     <ul class="nav-links">
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#ventures">Ventures</a></li>
@@ -802,7 +1193,7 @@
           </div>
 
           <div class="hero-role">
-            Lead Data Scientist &nbsp;·&nbsp; <em>Qventus</em>
+            LEAD DATA SCIENTIST &nbsp;·&nbsp; <em>Qventus</em>
           </div>
 
           <div class="hero-meta">
@@ -840,26 +1231,34 @@
   </section>
 
   <!-- ─── INTRO ─── -->
-  <section class="intro">
+  <section class="intro" id="about">
     <div class="wrap">
       <div class="intro-grid">
         <div class="section-label">About</div>
         <div class="intro-body">
           <p>
             I'm a Lead Data Scientist at <em>Qventus</em>, where I build
-            hybrid ML and generative AI systems for perioperative care
-            coordination and the LLM evaluation infrastructure
-            underneath all of it.
+            AI systems for perioperative care coordination.
           </p>
           <p>
-            Before that, I worked on <em>recommender systems</em> at
-            Headspace: content discoverability, novelty in
-            personalization, and the appointment-booking funnel that
-            powered our therapy and psychiatry products, and on
-            Alzheimer's research via computer vision. My academic
-            background is in cognitive science and cybernetics, which
-            still shapes how I think about evaluation, behavior, and
-            what machines can and can't notice.
+            Before that, I worked at <em>Headspace</em> across clinical
+            NLP and recommender systems, extracting mental health
+            indicators and behavioral signals from therapy chat data,
+            and building personalization systems for content
+            discoverability and provider matching.
+          </p>
+          <p>
+            My research on predicting Alzheimer's cognitive scores from
+            a single baseline MRI and demographic data was published in
+            <em>Nature Aging</em> (2026). I also hold a publication in
+            recommender systems from my time at Headspace.
+          </p>
+          <p>
+            My academic background is in <em>cognitive science</em>,
+            machine learning, and neural computation; prior projects
+            include neural signal processing of ECoG data, cancer
+            prognosis from microRNA biomarkers, and network analysis of
+            social influence in media.
           </p>
           <p>
             Outside of work, I write poetry (my first collection,
@@ -887,116 +1286,10 @@
         </div>
       </div>
 
-      <!-- ── CHAPTER 01: CLINICAL AI ── -->
-      <div class="chapter chapter-clinical">
-        <div class="chapter-head">
-          <div class="chapter-num">Chapter <span>01</span> / Clinical AI &amp; LLM Systems</div>
-          <h2 class="chapter-title">Building production AI for <em>surgical and perioperative care</em>.</h2>
-        </div>
-
-        <div class="project-grid single">
-
-          <article class="card card-deep">
-            <div class="card-preview" style="aspect-ratio: 5/2; margin: -28px -30px 8px;">
-              <img src="assets/images/llm-eval-framework.svg" alt="LLM Evaluation Framework pipeline: Curate, Generate, Evaluate, Optimize, loop" style="object-fit: cover; object-position: center;" />
-            </div>
-            <div class="card-tags">
-              <span class="card-tag lead">LLM Eval</span>
-              <span class="card-tag">Healthcare AI</span>
-              <span class="card-tag">Continuous Improvement</span>
-            </div>
-            <h3 class="card-title">Production LLM <em>Evaluation Framework</em></h3>
-            <p class="card-fragment">A loop that lets clinical AI be iterated on safely, and audibly.</p>
-            <p class="card-desc">
-              Designed and built the production evaluation framework for LLMs used in clinical decision support. Four interlocking layers feed a continuous iteration loop, with precision, recall, and hallucination metrics anchored to clinical ground truth.
-            </p>
-            <div class="card-buckets">
-              <div class="card-bucket">
-                <h4 class="bucket-title">Golden Dataset Curation</h4>
-                <p class="bucket-body">Coverage-aware sampling across conditions, demographics, and rare cases. The ground truth all other layers measure against.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Scoring &amp; Human Validation</h4>
-                <p class="bucket-body">Automated LLM-as-judge scoring against curated rubrics catches regressions early. High-uncertainty cases route to clinical reviewers, where disagreement is treated as the most valuable signal, not noise.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Autonomous Prompt Optimization</h4>
-                <p class="bucket-body">Structured search over prompt templates against fixed golden sets, replacing manual prompt tuning.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="card card-deep">
-            <div class="card-preview" style="aspect-ratio: 5/2; margin: -28px -30px 8px;">
-              <img src="assets/images/surgical-outcomes-model.svg" alt="Hybrid ensemble model architecture: EHR inputs to three surgical outcome models to calibrated risk scores" style="object-fit: cover; object-position: center;" />
-            </div>
-            <div class="card-tags">
-              <span class="card-tag lead">Hybrid ML</span>
-              <span class="card-tag">Ensemble</span>
-              <span class="card-tag">Perioperative</span>
-            </div>
-            <h3 class="card-title">Hybrid <em>Ensemble Models</em> for Surgical Outcomes &amp; Efficiency</h3>
-            <p class="card-fragment">Reading structured EHR data and unstructured clinical notes as one problem.</p>
-            <p class="card-desc">
-              A line of work applying hybrid ensemble approaches to perioperative risk and surgical workflow efficiency, combining structured EHR signals with unstructured clinical language. Deployed across partner health systems for proactive intervention.
-            </p>
-            <div class="card-buckets">
-              <div class="card-bucket">
-                <h4 class="bucket-title">Surgical Cancellation Prediction</h4>
-                <p class="bucket-body">Identifying which planned surgeries are at risk for cancellation, and why. <strong>Accuracy 0.67 → 0.79, specificity 0.71 → 0.91, precision 0.49 → 0.74.</strong></p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">ASA Physical Status Classification</h4>
-                <p class="bucket-body">Patient risk prior to surgery prediction. <strong>+152% lift over random, 97% of interrater agreement ceiling.</strong> Under revision at JMIR.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Screening Duration Modeling</h4>
-                <p class="bucket-body">Predicting and reducing waste in pre-surgical screening workflows. <strong>83% waste reduction, 10.8 hrs saved per 100 patients.</strong></p>
-              </div>
-            </div>
-          </article>
-
-          <article class="card card-deep">
-            <div class="card-tags">
-              <span class="card-tag lead">Responsible AI</span>
-              <span class="card-tag">Governance</span>
-              <span class="card-tag">Working Group</span>
-            </div>
-            <h3 class="card-title">Leading the <em>Responsible AI</em> Initiative</h3>
-            <p class="card-desc">
-              Lead the Responsible AI working group at Qventus. Defined the pillars that clinical AI systems are accountable to and mapped each technical solution back to the pillar it supports, so responsibility becomes verifiable rather than asserted.
-            </p>
-            <div class="card-buckets">
-              <div class="card-bucket">
-                <h4 class="bucket-title">Fairness</h4>
-                <p class="bucket-body">Bias audits across demographic groups for clinical AI outputs.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Transparency</h4>
-                <p class="bucket-body">Interpretability analysis and ground-truth annotation infrastructure.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Safety</h4>
-                <p class="bucket-body">LLM evaluation framework with hallucination metrics anchored to clinical ground truth.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Reliability</h4>
-                <p class="bucket-body">Continuous re-evaluation against golden datasets to catch drift before it reaches production.</p>
-              </div>
-              <div class="card-bucket">
-                <h4 class="bucket-title">Human Oversight</h4>
-                <p class="bucket-body">Clinical reviewer routing, human-in-the-loop validation, escalation paths.</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <!-- ── CHAPTER 02: HEADSPACE ── -->
+      <!-- ── CHAPTER 01: HEADSPACE ── -->
       <div class="chapter chapter-recsys">
         <div class="chapter-head">
-          <div class="chapter-num">Chapter <span>02</span> / Mental Health ML at Headspace</div>
+          <div class="chapter-num">Chapter <span>01</span> / Mental Health ML at Headspace</div>
           <h2 class="chapter-title">Reading chat data &amp; personalizing care for <em>anxiety, depression, and the things in between</em>.</h2>
         </div>
 
@@ -1013,6 +1306,9 @@
             <p class="card-desc">
               NLP systems that extract structured signal from longitudinal therapy chat data. Turning unstructured language into clinical and behavioral indicators usable by care teams and downstream personalization surfaces.
             </p>
+            <div class="card-preview" style="aspect-ratio: 1500/820; border-radius: 8px; margin: 0;">
+              <img src="assets/images/mental-health-nlp.svg" alt="NLP pipeline extracting anxiety and depression indicators, activity mentions, and goal progress from therapy chat data" style="object-fit: cover; object-position: center;"/>
+            </div>
             <div class="card-buckets">
               <div class="card-bucket">
                 <h4 class="bucket-title">Anxiety &amp; Depression Indicators</h4>
@@ -1040,6 +1336,9 @@
             <p class="card-desc">
               Built and extended the content recommendation system for Headspace's meditation and sleep catalog. Modeled temporal listening patterns while balancing relevance with deliberate exposure to unfamiliar content.
             </p>
+            <div class="card-preview" style="aspect-ratio: 8/3; border-radius: 8px; margin: 0;">
+              <img src="assets/images/semantic-sampling-workflow.svg" alt="Semantic sampling workflow: TiSASRec predicts the next item, LaBSE embeds it, cosine similarity ranks catalog items, and sampling replaces it with a semantically similar, novel recommendation" style="object-fit: cover; object-position: center;"/>
+            </div>
             <div class="card-buckets">
               <div class="card-bucket">
                 <h4 class="bucket-title">TiSASRec Wrapper</h4>
@@ -1073,6 +1372,9 @@
             <p class="card-desc">
               Modeling and ranking work on Headspace's therapy and psychiatry provider matching. Optimized the funnel from initial intake all the way through to delivered appointment, not top-of-funnel engagement.
             </p>
+            <div class="card-preview" style="aspect-ratio: 1600/540; border-radius: 8px; margin: 0;">
+              <img src="assets/images/provider-matching.svg" alt="Provider matching funnel ranking therapists and psychiatrists from initial intake through to delivered appointment" style="object-fit: cover; object-position: center;"/>
+            </div>
             <div class="card-metric">
               <div class="card-metric-item">
                 <span class="card-metric-val">+11%</span>
@@ -1096,6 +1398,81 @@
             <p class="card-desc">
               Analyzed the URLs therapists shared with patients to evaluate how much was sourced from in-house Headspace content versus external sites. Clustered topics that external links covered to surface concrete gaps in the in-house catalog. The analysis circulated widely across the company and directly shaped in-house content production priorities.
             </p>
+            <div class="card-preview" style="aspect-ratio: 1400/510; border-radius: 8px; margin: 0;">
+              <img src="assets/images/content-gap-discovery.svg" alt="Clustering external links therapists shared with patients to identify content gaps in the in-house catalog" style="object-fit: cover; object-position: center;"/>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── CHAPTER 02: CLINICAL AI ── -->
+      <div class="chapter chapter-clinical">
+        <div class="chapter-head">
+          <div class="chapter-num">Chapter <span>02</span> / Clinical AI &amp; LLM Systems</div>
+          <h2 class="chapter-title">Building production AI for <em>surgical and perioperative care</em>.</h2>
+        </div>
+
+        <div class="project-grid single">
+
+          <article class="card card-deep">
+            <div class="card-preview" style="aspect-ratio: 5/2; margin: -28px -30px 8px;">
+              <img src="assets/images/llm-eval-framework.svg" alt="LLM Evaluation Framework pipeline: Curate, Generate, Evaluate, Optimize, loop" style="object-fit: cover; object-position: center;"/>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag lead">LLM Eval</span>
+              <span class="card-tag">Healthcare AI</span>
+              <span class="card-tag">Continuous Improvement</span>
+            </div>
+            <h3 class="card-title">Production LLM <em>Evaluation Framework</em></h3>
+            <p class="card-fragment">A loop that lets clinical AI be iterated on safely, and audibly.</p>
+            <p class="card-desc">
+              Designed and built the production evaluation framework for LLMs used in clinical decision support. Four interlocking layers feed a continuous iteration loop, with precision, recall, and hallucination metrics anchored to clinical ground truth.
+            </p>
+            <div class="card-buckets">
+              <div class="card-bucket">
+                <h4 class="bucket-title">Golden Dataset Curation</h4>
+                <p class="bucket-body">Coverage-aware sampling across conditions, demographics, and rare cases. The ground truth all other layers measure against.</p>
+              </div>
+              <div class="card-bucket">
+                <h4 class="bucket-title">Scoring &amp; Human Validation</h4>
+                <p class="bucket-body">Automated LLM-as-judge scoring against curated rubrics catches regressions early. High-uncertainty cases route to clinical reviewers, where disagreement is treated as the most valuable signal, not noise.</p>
+              </div>
+              <div class="card-bucket">
+                <h4 class="bucket-title">Autonomous Prompt Optimization</h4>
+                <p class="bucket-body">Structured search over prompt templates against fixed golden sets, replacing manual prompt tuning.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-deep">
+            <div class="card-preview" style="aspect-ratio: 1200/420; margin: -28px -30px 8px;">
+              <img src="assets/images/surgical-outcomes-model.svg" alt="Hybrid ensemble model architecture: EHR inputs to three surgical outcome models to calibrated risk scores" style="object-fit: cover; object-position: center;"/>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag lead">Hybrid ML</span>
+              <span class="card-tag">Ensemble</span>
+              <span class="card-tag">Perioperative</span>
+            </div>
+            <h3 class="card-title">Hybrid <em>Ensemble Models</em> for Surgical Outcomes &amp; Efficiency</h3>
+            <p class="card-fragment">Reading structured EHR data and unstructured clinical notes as one problem.</p>
+            <p class="card-desc">
+              A line of work applying hybrid ensemble approaches to perioperative risk and surgical workflow efficiency, combining structured EHR signals with unstructured clinical language. Deployed across partner health systems for proactive intervention.
+            </p>
+            <div class="card-buckets">
+              <div class="card-bucket">
+                <h4 class="bucket-title">Surgical Cancellation Prediction</h4>
+                <p class="bucket-body">Identifying which planned surgeries are at risk for cancellation, and why. <strong>Accuracy 0.67 → 0.79, specificity 0.71 → 0.91, precision 0.49 → 0.74.</strong></p>
+              </div>
+              <div class="card-bucket">
+                <h4 class="bucket-title">ASA Physical Status Classification</h4>
+                <p class="bucket-body">Patient risk prior to surgery prediction. <strong>+152% lift over random, 97% of interrater agreement ceiling.</strong> Under revision at JMIR.</p>
+              </div>
+              <div class="card-bucket">
+                <h4 class="bucket-title">Screening Duration Modeling</h4>
+                <p class="bucket-body">Predicting and reducing waste in pre-surgical screening workflows. <strong>83% waste reduction, 10.8 hrs saved per 100 patients.</strong></p>
+              </div>
+            </div>
           </article>
 
         </div>
@@ -1127,9 +1504,9 @@
             <div class="card-link">Read on Towards Data Science</div>
           </a>
 
-          <a class="card" href="https://towardsdatascience.com/clustering-and-parkinsons-patients-during-covid-19-5552c005cfd9/" target="_blank" rel="noopener">
+          <a class="card" href="https://towardsdatascience.com/clustering-parkinsons-patients-during-covid-19-5552c005cfd9" target="_blank" rel="noopener">
             <div class="card-preview">
-              <img src="assets/images/parkinsons-covid-analysis.svg" alt="Clustering analysis of Parkinson's patient symptoms during COVID-19, showing Group 4 symptom worsening rates versus cohort average" />
+              <img src="assets/images/parkinsons-covid-analysis.svg" alt="Group 4 analysis: 13 of 19 symptoms worsened at higher rates than the cohort average during COVID-19" />
             </div>
             <div class="card-tags">
               <span class="card-tag lead">Clustering</span>
@@ -1163,7 +1540,7 @@
 
           <a class="card" href="projects/haoma-connect.html">
             <div class="card-preview">
-              <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDnQyEwACJebTt9Cj5MZGh5J2QcNJ5Loppvmq2hAENldL0Qs9TZ8NYpZSrTNE16rUt4Jkz-e5xcf6Lod6Adb3BdidjepbNPaP351sjriB8zQriV-hVxcuXqX0o6MhzvBSt6VGFDjek7t6JdVLfdVa-R7RRRAU4rGM9sdA-twVGcIJpCGSm119UCgaCEyD2-EMH11tgxPTJawRhlGkyscHGSwxv33UAhWFEk7F7dckA=w1280" alt="Redesigned Home Health Compare dashboard with bar charts and donut charts" />
+              <img src="assets/images/haoma-hhc-redesign.png" alt="Redesigned Home Health Compare dashboard with bar charts and donut charts" />
             </div>
             <div class="card-tags">
               <span class="card-tag lead">Product Design</span>
@@ -1184,6 +1561,104 @@
     </div>
   </section>
 
+  <!-- ─── PUBLICATIONS ─── -->
+  <section class="intro" id="publications">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div class="section-label">Publications</div>
+        <div class="intro-body">
+          Peer-reviewed research spanning clinical AI, neuroimaging,
+          and recommender systems. Published in Nature Publishing Group
+          and indexed journals.
+        </div>
+      </div>
+
+      <div class="pub-list">
+
+        <!-- Nature Aging 2026 -->
+        <div class="pub-card featured">
+          <div>
+            <div class="pub-badge">Nature Aging · 2026</div>
+            <h3 class="pub-title">Predicting Categorical and Continuous <em>Alzheimer's Disease Outcomes</em> from a Single MRI Scan</h3>
+            <p class="pub-authors">D Ma, <strong>C Pabalan</strong>, A Rajagopal, A Akanksha, Y Interian, Y Yang, A Raj</p>
+            <div class="pub-meta">
+              <div class="pub-meta-item"><span>Nature Aging</span></div>
+              <div class="pub-meta-item"><span>Vol. 6, pp. 1121-1137</span></div>
+              <div class="pub-meta-item"><span>Open Access</span></div>
+              <div class="pub-meta-item"><span>IF: 25.0</span></div>
+            </div>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--text-soft); margin-bottom: 10px;">
+              Predicts Alzheimer's cognitive scores up to 36 months out from a single baseline MRI scan, no PET, longitudinal data, or cognitive assessments required. State-of-the-art results on both segmentation and cognitive score prediction, for a disease affecting 50M+ people worldwide.
+            </p>
+            <div class="pub-contribution">
+              <strong>My contribution</strong>
+              Led feature design and modeling over several years, including the ensemble architecture combining imaging and tabular modules. The key unlock was treating demographic features as cognitive correlates rather than mere covariates. Also contributed code, model execution, and data preprocessing.
+            </div>
+            <div style="margin-top: 16px;">
+              <a class="pub-link" href="https://doi.org/10.1038/s43587-026-01121-2" target="_blank" rel="noopener">Read the paper</a>
+            </div>
+          </div>
+          <div class="pub-right">
+            <div class="pub-if">
+              <div class="pub-if-val">25.0</div>
+              <div class="pub-if-label">Impact Factor</div>
+            </div>
+            <div class="pub-altmetric">
+              <div class="pub-altmetric-val">83</div>
+              <div class="pub-altmetric-label">Altmetric</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headspace 2023 -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-badge journal">IJACSA · 2023</div>
+            <h3 class="pub-title">Semantic Sampling: Enhancing <em>Recommendation Diversity</em> and User Engagement in the Headspace Meditation App</h3>
+            <p class="pub-authors">RS Rajput, <strong>C Pabalan</strong>, A Chaturvedi, P Kulkarni, AB Headspace</p>
+            <div class="pub-meta">
+              <div class="pub-meta-item"><span>International Journal of Advanced Computer Science &amp; Applications</span></div>
+              <div class="pub-meta-item"><span>Vol. 14 (11) · 2023</span></div>
+            </div>
+            <div class="pub-contribution">
+              <strong>My contribution</strong>
+              Recommender systems research from my time at Headspace, on semantic sampling to improve content diversity and long-term user engagement in the meditation catalog.
+            </div>
+          </div>
+          <div class="pub-right">
+            <div class="pub-if">
+              <div class="pub-if-val" style="font-size: 1.1rem; color: var(--sage);">RecSys</div>
+              <div class="pub-if-label">Domain</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- bioRxiv 2021 -->
+        <div class="pub-card">
+          <div>
+            <div class="pub-badge preprint">Preprint · 2021</div>
+            <h3 class="pub-title">Multi-task Learning and Ensemble Approach to Predict <em>Cognitive Scores</em> for Patients with Alzheimer's Disease</h3>
+            <p class="pub-authors">D Ma, <strong>C Pabalan</strong>, A Rajagopal, A Akanksha, Y Interian, Y Yang, A Raj</p>
+            <div class="pub-meta">
+              <div class="pub-meta-item"><span>bioRxiv · 2021.12.08.471856</span></div>
+              <div class="pub-meta-item"><span>Precursor to Nature Aging (2026)</span></div>
+            </div>
+            <div style="margin-top: 16px;">
+              <a class="pub-link" href="https://www.biorxiv.org/content/10.1101/2021.12.08.471856" target="_blank" rel="noopener">View preprint</a>
+            </div>
+          </div>
+          <div class="pub-right">
+            <div class="pub-if">
+              <div class="pub-if-val" style="font-size: 1.1rem; color: var(--text-dim);">2021 → 2026</div>
+              <div class="pub-if-label">Published</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── WRITING ─── -->
   <section class="work chapter-writing" id="writing" style="border-top: none;">
     <div class="wrap">
@@ -1197,64 +1672,221 @@
         </div>
       </div>
 
-      <div class="writing-list" style="margin-top: 56px;">
+      <div class="carousel-wrap">
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="carouselTrack">
 
-        <a class="writing-item" href="https://medium.com/ai-advances/the-neuroscience-that-inspired-modern-computer-vision-62e9f22732b3" target="_blank" rel="noopener">
-          <span class="writing-meta">Essay</span>
-          <span class="writing-title">The <em>Neuroscience</em> That Inspired Modern Computer Vision</span>
-          <span class="writing-pub">AI Advances · 2025</span>
-        </a>
+            <!-- 1 -->
+            <a class="carousel-slide" href="https://medium.com/ai-advances/the-neuroscience-that-inspired-modern-computer-vision-62e9f22732b3" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #1a1040 0%, #4DD4B5 100%);">
+                  <span class="carousel-thumb-title">The Neuroscience That Inspired Modern Computer Vision</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Essay</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>AI Advances · 2025</span>
+                  </div>
+                  <div class="carousel-title">The <em>Neuroscience</em> That Inspired Modern Computer Vision</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/cognitivecuriosities/how-revisiting-my-neuroscience-notes-quieted-my-anxiety-95128380039c" target="_blank" rel="noopener">
-          <span class="writing-meta">Personal</span>
-          <span class="writing-title">How Revisiting My <em>Neuroscience Notes</em> Quieted My Anxiety</span>
-          <span class="writing-pub">CognitiveCuriosities · 2024</span>
-        </a>
+            <!-- 2 -->
+            <a class="carousel-slide" href="https://medium.com/cognitivecuriosities/how-revisiting-my-neuroscience-notes-quieted-my-anxiety-95128380039c" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #0d2030 0%, #9C8DDB 100%);">
+                  <span class="carousel-thumb-title">How Revisiting My Neuroscience Notes Quieted My Anxiety</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Personal</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>CognitiveCuriosities · 2024</span>
+                  </div>
+                  <div class="carousel-title">How Revisiting My <em>Neuroscience Notes</em> Quieted My Anxiety</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/ai-advances/the-ethical-dilemmas-we-must-address-before-teslas-robotaxis-and-unsupervised-self-driving-cars-ffaab9127bd1" target="_blank" rel="noopener">
-          <span class="writing-meta">Ethics</span>
-          <span class="writing-title">The <em>Ethical Dilemmas</em> We Must Address Before Tesla's Robotaxis</span>
-          <span class="writing-pub">AI Advances · 2024</span>
-        </a>
+            <!-- 3 -->
+            <a class="carousel-slide" href="https://medium.com/ai-advances/the-ethical-dilemmas-we-must-address-before-teslas-robotaxis-and-unsupervised-self-driving-cars-ffaab9127bd1" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #1a0a0a 0%, #E88468 100%);">
+                  <span class="carousel-thumb-title">The Ethical Dilemmas We Must Address Before Tesla's Robotaxis</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Ethics</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>AI Advances · 2024</span>
+                  </div>
+                  <div class="carousel-title">The <em>Ethical Dilemmas</em> We Must Address Before Tesla's Robotaxis</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/towards-data-science/network-analysis-illustrated-metrics-to-spread-public-health-information-4e259c3a5e33" target="_blank" rel="noopener">
-          <span class="writing-meta">Research</span>
-          <span class="writing-title"><em>Network Analysis</em> Illustrated: Metrics to Spread Public Health Information</span>
-          <span class="writing-pub">Towards Data Science · 2024</span>
-        </a>
+            <!-- 4 -->
+            <a class="carousel-slide" href="https://medium.com/towards-data-science/network-analysis-illustrated-metrics-to-spread-public-health-information-4e259c3a5e33" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #0a1a10 0%, #8FCB95 100%);">
+                  <span class="carousel-thumb-title">Network Analysis Illustrated: Metrics to Spread Public Health Information</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Research</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>Towards Data Science · 2024</span>
+                  </div>
+                  <div class="carousel-title"><em>Network Analysis</em> Illustrated: Metrics to Spread Public Health Information</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/data-science/beyond-accuracy-embracing-serendipity-and-novelty-in-recommendations-for-long-term-user-retention-701a23b1cb34" target="_blank" rel="noopener">
-          <span class="writing-meta">Research</span>
-          <span class="writing-title">Beyond Accuracy: Embracing <em>Serendipity &amp; Novelty</em> in Recommendations</span>
-          <span class="writing-pub">Towards Data Science · 2023</span>
-        </a>
+            <!-- 5 -->
+            <a class="carousel-slide" href="https://medium.com/data-science/beyond-accuracy-embracing-serendipity-and-novelty-in-recommendations-for-long-term-user-retention-701a23b1cb34" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #0d1a1a 0%, #4DD4B5 100%);">
+                  <span class="carousel-thumb-title">Beyond Accuracy: Embracing Serendipity &amp; Novelty in Recommendations</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Research</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>Towards Data Science · 2023</span>
+                  </div>
+                  <div class="carousel-title">Beyond Accuracy: <em>Serendipity &amp; Novelty</em> in Recommendations</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/data-science/using-multi-task-and-ensemble-learning-to-predict-alzheimers-cognitive-functioning-7b46fe09f9ff" target="_blank" rel="noopener">
-          <span class="writing-meta">Research</span>
-          <span class="writing-title">Using <em>Multi-task and Ensemble Learning</em> to Predict Alzheimer's Cognitive Functioning</span>
-          <span class="writing-pub">Towards Data Science · 2023</span>
-        </a>
+            <!-- 6 -->
+            <a class="carousel-slide" href="https://medium.com/data-science/using-multi-task-and-ensemble-learning-to-predict-alzheimers-cognitive-functioning-7b46fe09f9ff" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #10101a 0%, #9C8DDB 100%);">
+                  <span class="carousel-thumb-title">Using Multi-task and Ensemble Learning to Predict Alzheimer's Cognitive Functioning</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Research</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>Towards Data Science · 2023</span>
+                  </div>
+                  <div class="carousel-title"><em>Multi-task &amp; Ensemble Learning</em> to Predict Alzheimer's Cognitive Functioning</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/data-science/why-my-cognitive-science-degree-was-a-great-foundation-for-data-science-and-machine-learning-f5838b527d40" target="_blank" rel="noopener">
-          <span class="writing-meta">Essay</span>
-          <span class="writing-title">Why My <em>Cognitive Science</em> Degree Was a Great Foundation for ML</span>
-          <span class="writing-pub">Towards Data Science · 2021</span>
-        </a>
+            <!-- 7 -->
+            <a class="carousel-slide" href="https://medium.com/data-science/our-machine-learning-algorithms-are-magnifying-bias-and-perpetuating-social-disparities-6beb6a03c939" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #1a0d08 0%, #ECA253 100%);">
+                  <span class="carousel-thumb-title">Our Machine Learning Algorithms Are Magnifying Bias and Perpetuating Social Disparities</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Ethics</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>Towards Data Science · 2020</span>
+                  </div>
+                  <div class="carousel-title">Our ML Algorithms Are <em>Magnifying Bias</em> and Perpetuating Social Disparities</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/data-science/our-machine-learning-algorithms-are-magnifying-bias-and-perpetuating-social-disparities-6beb6a03c939" target="_blank" rel="noopener">
-          <span class="writing-meta">Ethics</span>
-          <span class="writing-title">Our Machine Learning Algorithms Are <em>Magnifying Bias</em> and Perpetuating Social Disparities</span>
-          <span class="writing-pub">Towards Data Science · 2020</span>
-        </a>
+            <!-- 8 -->
+            <a class="carousel-slide" href="https://medium.com/data-science/why-my-cognitive-science-degree-was-a-great-foundation-for-data-science-and-machine-learning-f5838b527d40" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #0a1a1a 0%, #CB6A3D 100%);">
+                  <span class="carousel-thumb-title">Why My Cognitive Science Degree Was a Great Foundation for ML</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>Essay</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>Towards Data Science · 2021</span>
+                  </div>
+                  <div class="carousel-title">Why My <em>Cognitive Science</em> Degree Was a Great Foundation for ML</div>
+                </div>
+              </div>
+            </a>
 
-        <a class="writing-item" href="https://medium.com/@christabellecp" target="_blank" rel="noopener">
-          <span class="writing-meta">All</span>
-          <span class="writing-title">View the full archive on <em>Medium</em> →</span>
-          <span class="writing-pub">@christabellecp</span>
-        </a>
+            <!-- 9 -->
+            <a class="carousel-slide" href="https://medium.com/@christabellecp" target="_blank" rel="noopener">
+              <div class="carousel-card">
+                <div class="carousel-thumb" style="background: linear-gradient(135deg, #1a1712 0%, #3E3830 100%);">
+                  <span class="carousel-thumb-title">View the Full Archive on Medium</span>
+                </div>
+                <div class="carousel-body">
+                  <div class="carousel-meta">
+                    <span>All</span>
+                    <span class="carousel-meta-dot"></span>
+                    <span>@christabellecp</span>
+                  </div>
+                  <div class="carousel-title">View the full archive on <em>Medium</em> →</div>
+                </div>
+              </div>
+            </a>
 
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-dots" id="carouselDots"></div>
+          <div class="carousel-arrows">
+            <button class="carousel-arrow" id="carouselPrev" aria-label="Previous">&#8592;</button>
+            <button class="carousel-arrow" id="carouselNext" aria-label="Next">&#8594;</button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      (function() {
+        const track    = document.getElementById('carouselTrack');
+        const dotsEl   = document.getElementById('carouselDots');
+        const prevBtn  = document.getElementById('carouselPrev');
+        const nextBtn  = document.getElementById('carouselNext');
+        const slides   = track.querySelectorAll('.carousel-slide');
+        const total    = slides.length;
+        let current    = 0;
+
+        function visibleCount() {
+          const w = track.parentElement.offsetWidth;
+          if (w < 600) return 1;
+          if (w < 900) return 2;
+          return 3;
+        }
+
+        function maxIndex() { return Math.max(0, total - visibleCount()); }
+
+        // Build dots
+        for (let i = 0; i <= maxIndex(); i++) {
+          const d = document.createElement('button');
+          d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          d.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(d);
+        }
+
+        function goTo(index) {
+          current = Math.max(0, Math.min(index, maxIndex()));
+          const slideW = slides[0].getBoundingClientRect().width + 16;
+          track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+          dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+          });
+          prevBtn.disabled = current === 0;
+          nextBtn.disabled = current >= maxIndex();
+        }
+
+        prevBtn.addEventListener('click', () => goTo(current - 1));
+        nextBtn.addEventListener('click', () => goTo(current + 1));
+        window.addEventListener('resize', () => goTo(Math.min(current, maxIndex())));
+        goTo(0);
+      })();
+    </script>
   </section>
 
   <!-- ─── VENTURES ─── -->
@@ -1277,9 +1909,9 @@
             <span class="card-tag">Published 2026</span>
           </div>
           <h3 class="card-title"><em>Rescue A Whisper</em></h3>
-          <p class="card-fragment">A debut poetry collection about faith, recovery, and the small voice you almost didn't hear.</p>
+          <p class="card-fragment">A debut poetry collection that follows 'The Change Cycle' and explores themes of grief, abuse, faith, and wrestling with guilt.</p>
           <p class="card-desc">
-            My debut poetry collection, published April 2026 under my own imprint, Christabelle Press. Available via Amazon, IngramSpark, Barnes &amp; Noble (Studio City Bookstar), and select indie bookstores in Southern California.
+            Available via Amazon, IngramSpark, Barnes and Noble and select indie bookstores in Southern California.
           </p>
         </article>
 
@@ -1291,7 +1923,7 @@
           <h3 class="card-title"><em>Coconut Cottagehouse</em></h3>
           <p class="card-fragment">Small-batch candles, made with my mom.</p>
           <p class="card-desc">
-            A hand-poured candle brand built on clean ingredients (coconut apricot wax, cotton and wooden wicks) and honest scent direction. Run with my mom; available via Shopify and select retail partners.
+            A hand-poured candle brand built on clean ingredients (coconut apricot wax, cotton and wooden wicks) and honest scent direction. Ran with my mom; available via Shopify and select retail partners.
           </p>
         </article>
 
@@ -1303,17 +1935,22 @@
           <h3 class="card-title"><em>SeizeTheData</em></h3>
           <p class="card-fragment">Data science, but make it wearable.</p>
           <p class="card-desc">
-            A data-themed apparel and accessories shop on Etsy / Printify. Originated from a class hoodie contest during my master's program and stayed alive because the jokes kept getting better.
+            A data-themed apparel and accessories shop on Etsy / Printify. Originated from a class hoodie contest during my master's program.
           </p>
         </article>
 
-        <article class="card">
+        <article class="card" style="grid-column: 1 / -1;">
+          <div class="card-preview" style="aspect-ratio: 1962/526;">
+            <img src="assets/images/datadiagrams-light.png" alt="Handwritten notes on decision boundaries, recommender systems, supervised learning, and error metrics" />
+          </div>
+          <div class="card-preview" style="aspect-ratio: 1969/587; margin-top: -18px;">
+            <img src="assets/images/datadiagrams-dark.png" alt="Handwritten notes on network diameter, time series, singular value decomposition, and databases" />
+          </div>
           <div class="card-tags">
             <span class="card-tag lead">Notes</span>
             <span class="card-tag">Instagram</span>
           </div>
           <h3 class="card-title"><em>DataDiagrams</em></h3>
-          <p class="card-fragment">Handwritten notes on ML, kept honest by being public.</p>
           <p class="card-desc">
             An ongoing Instagram series of handwritten notes covering ML concepts: decision boundaries, recommender systems, SVD, time series, error metrics, network theory. Originally a study habit; accidentally became a public archive.
           </p>
@@ -1340,7 +1977,6 @@
             <li><a href="https://www.linkedin.com/in/christabellecp/" target="_blank" rel="noopener"><span>LinkedIn</span> /in/christabellecp</a></li>
             <li><a href="https://github.com/christabellecp" target="_blank" rel="noopener"><span>GitHub</span> @christabellecp</a></li>
             <li><a href="https://medium.com/@christabellecp" target="_blank" rel="noopener"><span>Medium</span> @christabellecp</a></li>
-            <li><a href="https://www.instagram.com/datadiagrams/" target="_blank" rel="noopener"><span>Instagram</span> @datadiagrams</a></li>
           </ul>
         </div>
       </div>

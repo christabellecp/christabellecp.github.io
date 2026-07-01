@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg-glow" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#257D7C" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arr-teal" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#257D7C"/>
+    </marker>
+    <marker id="arr-sage" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8FCB95"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#CB6A3D"/>
+    </marker>
+    <marker id="arr-dim" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6B6158" opacity="0.7"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1600" height="600" fill="#171410"/>
+  <rect width="1600" height="600" fill="url(#bg-glow)"/>
+
+  <!-- EYEBROW -->
+  <line x1="48" y1="40" x2="76" y2="40" stroke="#257D7C" stroke-width="1.5" opacity="0.8"/>
+  <text x="88" y="44" fill="#9F9683"
+        font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">SEMANTIC SAMPLING WORKFLOW · HEADSPACE MEDITATION · RECOMMENDATION DIVERSITY</text>
+
+  <!-- SECTION DIVIDERS -->
+  <line x1="510" y1="64" x2="510" y2="548" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+  <line x1="1060" y1="64" x2="1060" y2="548" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+
+  <!-- ══ SECTION HEADERS ══ -->
+  <rect x="48" y="64" width="440" height="30" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="268" y="83" text-anchor="middle" fill="#257D7C"
+        font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">TISASREC OUTPUT</text>
+
+  <rect x="530" y="64" width="508" height="30" rx="4" fill="#1E2A28" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="784" y="83" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">SEMANTIC EMBEDDING</text>
+
+  <rect x="1080" y="64" width="472" height="30" rx="4" fill="#251E14" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="1316" y="83" text-anchor="middle" fill="#CB6A3D"
+        font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">SEMANTIC SAMPLING</text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION 1: TiSASRec (x: 48–490) -->
+  <!-- ══════════════════════════════════════════════════ -->
+
+  <!-- Sequence nodes A B C D -->
+  <!-- A -->
+  <rect x="56" y="140" width="64" height="64" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="88" y="170" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">A</text>
+  <text x="88" y="190" text-anchor="middle" fill="#9F9683"
+        font-family="ui-monospace,monospace" font-size="9">Doze</text>
+
+  <line x1="120" y1="172" x2="146" y2="172" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <!-- B -->
+  <rect x="150" y="140" width="64" height="64" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="182" y="170" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">B</text>
+  <text x="182" y="190" text-anchor="middle" fill="#9F9683"
+        font-family="ui-monospace,monospace" font-size="9">Midnight</text>
+
+  <line x1="214" y1="172" x2="240" y2="172" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <!-- C -->
+  <rect x="244" y="140" width="64" height="64" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="276" y="170" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">C</text>
+  <text x="276" y="190" text-anchor="middle" fill="#9F9683"
+        font-family="ui-monospace,monospace" font-size="9">Switch Off</text>
+
+  <line x1="308" y1="172" x2="334" y2="172" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+
+  <!-- D (predicted, dashed) -->
+  <rect x="338" y="140" width="64" height="64" rx="6" fill="#222018" stroke="#6B6158" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="370" y="170" text-anchor="middle" fill="#9F9683"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">D</text>
+  <text x="370" y="190" text-anchor="middle" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9">Goodnight</text>
+
+  <!-- PREDICTED label -->
+  <rect x="330" y="120" width="80" height="16" rx="8" fill="#222018" stroke="#6B6158" stroke-width="0.8"/>
+  <text x="370" y="131" text-anchor="middle" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">PREDICTED</text>
+
+  <!-- Content Legend -->
+  <rect x="56" y="228" width="330" height="178" rx="6" fill="#1A1714" stroke="#2D2820" stroke-width="1"/>
+  <text x="76" y="250" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="1.5">CONTENT LEGEND</text>
+  <line x1="64" y1="256" x2="378" y2="256" stroke="#2D2820" stroke-width="1"/>
+
+  <g font-family="ui-monospace,monospace" font-size="12">
+    <text x="76" y="278" fill="#257D7C" font-weight="500">A</text>
+    <text x="98"  y="278" fill="#CDC1A9">Doze</text>
+    <text x="230" y="278" fill="#257D7C" font-weight="500">F</text>
+    <text x="252" y="278" fill="#CDC1A9">Drift Well</text>
+
+    <text x="76" y="302" fill="#257D7C" font-weight="500">B</text>
+    <text x="98"  y="302" fill="#CDC1A9">Midnight Library</text>
+    <text x="230" y="302" fill="#257D7C" font-weight="500">G</text>
+    <text x="252" y="302" fill="#CDC1A9">Pine Camp</text>
+
+    <text x="76" y="326" fill="#257D7C" font-weight="500">C</text>
+    <text x="98"  y="326" fill="#CDC1A9">Switching Off</text>
+    <text x="230" y="326" fill="#257D7C" font-weight="500">H</text>
+    <text x="252" y="326" fill="#CDC1A9">Intention Walk</text>
+
+    <text x="76" y="350" fill="#257D7C" font-weight="500">D</text>
+    <text x="98"  y="350" fill="#CDC1A9">Goodnight</text>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION 2: Semantic Embedding (x: 530–1040) -->
+  <!-- ══════════════════════════════════════════════════ -->
+
+  <!-- D input -->
+  <rect x="540" y="140" width="64" height="64" rx="6" fill="#222018" stroke="#6B6158" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="572" y="178" text-anchor="middle" fill="#9F9683"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">D</text>
+
+  <!-- D → LaBSE -->
+  <line x1="604" y1="172" x2="634" y2="172" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+
+  <!-- LaBSE box -->
+  <rect x="638" y="136" width="152" height="72" rx="8" fill="#182018" stroke="#8FCB95" stroke-width="1.5"/>
+  <text x="714" y="166" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="500">LaBSE</text>
+  <text x="714" y="186" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="11">Embedder</text>
+
+  <!-- LaBSE → embedding vector -->
+  <line x1="790" y1="172" x2="820" y2="172" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+
+  <!-- D embedding vector [.10  .23  .54] -->
+  <rect x="824" y="152" width="140" height="40" rx="4" fill="#1E2A1E" stroke="#8FCB95" stroke-width="1"/>
+  <text x="840" y="177" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">.10</text>
+  <line x1="872" y1="154" x2="872" y2="190" stroke="#2D2820" stroke-width="1"/>
+  <text x="882" y="177" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">.23</text>
+  <line x1="914" y1="154" x2="914" y2="190" stroke="#2D2820" stroke-width="1"/>
+  <text x="924" y="177" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">.54</text>
+  <text x="882" y="208" text-anchor="middle" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9">Content Embedding (D)</text>
+
+  <!-- Catalog Embeddings table -->
+  <rect x="540" y="240" width="320" height="148" rx="6" fill="#1A1714" stroke="#2D2820" stroke-width="1"/>
+  <text x="560" y="262" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="1.5">CATALOG EMBEDDINGS</text>
+  <line x1="548" y1="268" x2="852" y2="268" stroke="#2D2820" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="565" y="285" fill="#6B6158" font-family="ui-monospace,monospace" font-size="10">ID</text>
+  <text x="620" y="285" fill="#6B6158" font-family="ui-monospace,monospace" font-size="10">DIM 1</text>
+  <text x="700" y="285" fill="#6B6158" font-family="ui-monospace,monospace" font-size="10">DIM 2</text>
+  <text x="780" y="285" fill="#6B6158" font-family="ui-monospace,monospace" font-size="10">DIM 3</text>
+  <line x1="548" y1="291" x2="852" y2="291" stroke="#2D2820" stroke-width="0.5"/>
+
+  <!-- Row F -->
+  <text x="565" y="316" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">F</text>
+  <text x="618" y="316" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.32</text>
+  <text x="698" y="316" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.95</text>
+  <text x="778" y="316" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.65</text>
+
+  <!-- Row G -->
+  <text x="565" y="342" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">G</text>
+  <text x="618" y="342" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.54</text>
+  <text x="698" y="342" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.45</text>
+  <text x="778" y="342" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.76</text>
+
+  <!-- Row H -->
+  <text x="565" y="368" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="13" font-weight="500">H</text>
+  <text x="618" y="368" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.56</text>
+  <text x="698" y="368" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.76</text>
+  <text x="778" y="368" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="13">.65</text>
+
+  <!-- Cosine Sim arrow and diamond — fully inside section 2 -->
+  <line x1="870" y1="314" x2="896" y2="314" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+
+  <polygon points="930,292 966,314 930,336 894,314" fill="#182018" stroke="#8FCB95" stroke-width="1.5"/>
+  <text x="930" y="310" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="8">COSINE</text>
+  <text x="930" y="322" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="8">SIM</text>
+
+  <!-- Arrow to rank table -->
+  <line x1="966" y1="314" x2="990" y2="314" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+
+  <!-- Rank table — fully inside section 2 -->
+  <rect x="994" y="278" width="110" height="96" rx="6" fill="#182018" stroke="#8FCB95" stroke-width="1"/>
+  <text x="1049" y="296" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="1">RANK</text>
+  <line x1="1000" y1="300" x2="1098" y2="300" stroke="#2D2820" stroke-width="0.8"/>
+
+  <text x="1012" y="320" fill="#6B6158" font-family="ui-monospace,monospace" font-size="12">1</text>
+  <text x="1042" y="320" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="14" font-weight="600">F</text>
+
+  <text x="1012" y="342" fill="#6B6158" font-family="ui-monospace,monospace" font-size="12">2</text>
+  <text x="1042" y="342" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="14">H</text>
+
+  <text x="1012" y="364" fill="#6B6158" font-family="ui-monospace,monospace" font-size="12">3</text>
+  <text x="1042" y="364" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="14">G</text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION 3: Semantic Sampling (x: 1080–1580) -->
+  <!-- ══════════════════════════════════════════════════ -->
+
+  <!-- BEFORE label -->
+  <text x="1096" y="130" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="1.5">BEFORE</text>
+
+  <!-- C node -->
+  <rect x="1096" y="140" width="64" height="64" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="1128" y="178" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">C</text>
+
+  <!-- dashed arrow to D -->
+  <line x1="1160" y1="172" x2="1196" y2="172" stroke="#6B6158" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-dim)"/>
+
+  <!-- D node (faded out) -->
+  <rect x="1200" y="140" width="64" height="64" rx="6" fill="#1E1814" stroke="#6B6158" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.55"/>
+  <text x="1232" y="178" text-anchor="middle" fill="#6B6158"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">D</text>
+
+  <!-- Arrow down to sampling box -->
+  <line x1="1232" y1="204" x2="1232" y2="246" stroke="#CB6A3D" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+
+  <!-- Sampling & Replacement box -->
+  <rect x="1096" y="250" width="270" height="76" rx="8" fill="#251E14" stroke="#CB6A3D" stroke-width="1.5"/>
+  <polygon points="1118,288 1126,276 1140,276 1148,288 1140,300 1126,300"
+           fill="none" stroke="#CB6A3D" stroke-width="1.5"/>
+  <text x="1174" y="281" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Sampling &amp;</text>
+  <text x="1174" y="300" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Replacement</text>
+  <rect x="1310" y="268" width="44" height="22" rx="11"
+        fill="#CB6A3D" fill-opacity="0.2" stroke="#CB6A3D" stroke-width="0.8"/>
+  <text x="1332" y="283" text-anchor="middle" fill="#CB6A3D"
+        font-family="ui-monospace,monospace" font-size="10" font-weight="500">p=0.9</text>
+
+  <!-- Arrow down to AFTER -->
+  <line x1="1232" y1="326" x2="1232" y2="368" stroke="#CB6A3D" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+
+  <!-- AFTER label -->
+  <text x="1096" y="390" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="1.5">AFTER</text>
+
+  <!-- C node -->
+  <rect x="1096" y="400" width="64" height="64" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="1128" y="438" text-anchor="middle" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">C</text>
+
+  <!-- solid arrow to F -->
+  <line x1="1160" y1="432" x2="1196" y2="432" stroke="#8FCB95" stroke-width="2" marker-end="url(#arr-sage)"/>
+
+  <!-- F node (new recommendation) -->
+  <rect x="1200" y="400" width="64" height="64" rx="6" fill="#182018" stroke="#8FCB95" stroke-width="2"/>
+  <text x="1232" y="428" text-anchor="middle" fill="#8FCB95"
+        font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">F</text>
+  <text x="1232" y="448" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="9">Drift Well</text>
+
+  <!-- Callout -->
+  <line x1="1264" y1="432" x2="1294" y2="432" stroke="#8FCB95" stroke-width="1" stroke-opacity="0.5"/>
+  <rect x="1298" y="410" width="162" height="44" rx="6"
+        fill="#182018" stroke="#8FCB95" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="1379" y="428" text-anchor="middle" fill="#8FCB95"
+        font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="500">Semantically similar</text>
+  <text x="1379" y="445" text-anchor="middle" fill="#8FCB95"
+        font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="500">&amp; novel ✓</text>
+
+  <!-- CAPTION -->
+  <line x1="48" y1="530" x2="76" y2="530" stroke="#6B6158" stroke-width="1" opacity="0.5"/>
+  <text x="88" y="534" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="0.3">Fig. 2  ·  TiSASRec predicts D as next item. D is embedded via LaBSE and ranked by cosine similarity against catalog items F, G, H.</text>
+  <text x="88" y="550" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="0.3">At probability p=0.9, D is replaced with the top-ranked semantically similar item F (Drift Well) — introducing diversity without sacrificing relevance.</text>
+</svg>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1600 540" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#257D7C" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arr-t" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#257D7C"/>
+    </marker>
+    <marker id="arr-s" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8FCB95"/>
+    </marker>
+    <marker id="arr-a" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#CB6A3D"/>
+    </marker>
+    <marker id="arr-l" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9C8DDB"/>
+    </marker>
+    <marker id="arr-trev" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#257D7C"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="540" fill="#171410"/>
+  <rect width="1600" height="540" fill="url(#bg1)"/>
+
+  <!-- EYEBROW -->
+  <line x1="48" y1="38" x2="76" y2="38" stroke="#257D7C" stroke-width="1.5" opacity="0.8"/>
+  <text x="88" y="42" fill="#9F9683" font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">PROVIDER MATCHING · HEADSPACE · MULTI-OBJECTIVE RANKING OPTIMIZATION</text>
+
+  <!-- DIVIDERS -->
+  <line x1="560" y1="58" x2="560" y2="504" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+  <line x1="1100" y1="58" x2="1100" y2="504" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+
+  <!-- SECTION LABELS -->
+  <rect x="48" y="58" width="490" height="28" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="293" y="76" text-anchor="middle" fill="#257D7C" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">APPOINTMENT FUNNEL</text>
+
+  <rect x="580" y="58" width="498" height="28" rx="4" fill="#1E1820" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="829" y="76" text-anchor="middle" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">MULTI-OBJECTIVE OPTIMIZATION</text>
+
+  <rect x="1120" y="58" width="432" height="28" rx="4" fill="#182018" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="1336" y="76" text-anchor="middle" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">IMPACT METRICS</text>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 1: Funnel (x: 48–540) -->
+  <!-- ══════════════════════════════════════════════ -->
+
+  <!-- Stage 1 -->
+  <rect x="48" y="104" width="494" height="52" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <rect x="48" y="104" width="494" height="4" rx="2" fill="#257D7C"/>
+  <text x="68" y="126" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">01</text>
+  <text x="90" y="126" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Member Intake</text>
+  <text x="90" y="144" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">Symptoms · preferences · availability · insurance</text>
+  <text x="482" y="134" text-anchor="end" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="12" font-weight="500">100%</text>
+
+  <line x1="295" y1="156" x2="295" y2="172" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-t)"/>
+
+  <!-- Stage 2 -->
+  <rect x="64" y="176" width="462" height="52" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="84" y="198" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">02</text>
+  <text x="106" y="198" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Provider Ranking</text>
+  <text x="106" y="216" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">Multi-objective ML scoring · ranked candidate list</text>
+  <text x="466" y="206" text-anchor="end" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="12" font-weight="500">~78%</text>
+
+  <line x1="295" y1="228" x2="295" y2="244" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-t)"/>
+
+  <!-- Stage 3 -->
+  <rect x="80" y="248" width="430" height="52" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="100" y="270" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">03</text>
+  <text x="122" y="270" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Member Selects Provider</text>
+  <text x="122" y="288" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">Top-ranked recommendations surfaced</text>
+  <text x="450" y="278" text-anchor="end" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="12" font-weight="500">~54%</text>
+
+  <line x1="295" y1="300" x2="295" y2="316" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-t)"/>
+
+  <!-- Stage 4 -->
+  <rect x="96" y="320" width="398" height="52" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <text x="116" y="342" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">04</text>
+  <text x="138" y="342" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Appointment Booked</text>
+  <text x="138" y="360" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">Scheduling · confirmation · reminders</text>
+  <text x="434" y="350" text-anchor="end" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="12" font-weight="500">~42%</text>
+
+  <line x1="295" y1="372" x2="295" y2="388" stroke="#8FCB95" stroke-width="2" marker-end="url(#arr-s)"/>
+
+  <!-- Stage 5: Delivered -->
+  <rect x="112" y="392" width="366" height="46" rx="6" fill="#182018" stroke="#8FCB95" stroke-width="2"/>
+  <rect x="112" y="392" width="366" height="4" rx="2" fill="#8FCB95"/>
+  <text x="132" y="413" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">05 · TARGET METRIC</text>
+  <text x="260" y="413" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Appointment Delivered ✓</text>
+  <text x="132" y="429" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9">not the click — the kept appointment</text>
+
+  <text x="58" y="472" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">Funnel optimized end-to-end · ranking model scores at stage 02 determine all downstream outcomes</text>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 2: Multi-objective (x: 580–1080) -->
+  <!-- ══════════════════════════════════════════════ -->
+
+  <text x="592" y="106" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">COMPETING OBJECTIVES · RANKING MODEL MUST BALANCE ALL SIMULTANEOUSLY</text>
+  <line x1="592" y1="112" x2="1080" y2="112" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Central ranking model node -->
+  <rect x="750" y="218" width="158" height="80" rx="8" fill="#1E1820" stroke="#9C8DDB" stroke-width="2"/>
+  <rect x="750" y="218" width="158" height="4" rx="2" fill="#9C8DDB"/>
+  <text x="829" y="248" text-anchor="middle" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Ranking</text>
+  <text x="829" y="266" text-anchor="middle" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="600">Model</text>
+  <text x="829" y="287" text-anchor="middle" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9">multi-objective</text>
+  <!-- pulse ring -->
+  <circle cx="829" cy="258" r="54" fill="none" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.3" stroke-dasharray="3,5"/>
+
+  <!-- Objective 1: Patient Outcomes (top) -->
+  <rect x="676" y="118" width="306" height="66" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <rect x="676" y="118" width="306" height="3" rx="2" fill="#257D7C"/>
+  <text x="696" y="136" fill="#257D7C" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OBJ 1 · PRIMARY</text>
+  <text x="696" y="154" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">Patient Outcomes</text>
+  <text x="696" y="168" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">appt delivery · treatment fit</text>
+  <text x="696" y="179" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">member wellbeing</text>
+
+  <line x1="829" y1="186" x2="829" y2="216" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-t)"/>
+
+  <!-- Objective 2: Therapist Burnout (left) -->
+  <rect x="592" y="228" width="144" height="64" rx="6" fill="#251E14" stroke="#CB6A3D" stroke-width="1.5"/>
+  <rect x="592" y="228" width="144" height="3" rx="2" fill="#CB6A3D"/>
+  <text x="608" y="244" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OBJ 2</text>
+  <text x="608" y="260" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="500">Therapist</text>
+  <text x="608" y="276" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="500">Burnout</text>
+  <text x="608" y="286" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="8">caseload · complexity</text>
+
+  <line x1="736" y1="258" x2="750" y2="258" stroke="#CB6A3D" stroke-width="1.5" marker-end="url(#arr-a)"/>
+
+  <!-- Objective 3: Specialty Match (right) -->
+  <rect x="916" y="210" width="160" height="64" rx="6" fill="#1A2018" stroke="#8FCB95" stroke-width="1.5"/>
+  <rect x="916" y="210" width="160" height="3" rx="2" fill="#8FCB95"/>
+  <text x="932" y="226" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OBJ 3</text>
+  <text x="932" y="244" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="500">Specialty Match</text>
+  <text x="932" y="258" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">diagnosis · modality</text>
+  <text x="932" y="270" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">language · approach</text>
+
+  <line x1="916" y1="242" x2="908" y2="258" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-s)"/>
+
+  <!-- Objective 4: Availability / Scheduling (bottom-left) -->
+  <rect x="592" y="346" width="170" height="68" rx="6" fill="#1E1820" stroke="#9C8DDB" stroke-width="1.2"/>
+  <rect x="592" y="346" width="170" height="3" rx="2" fill="#9C8DDB"/>
+  <text x="608" y="362" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OBJ 4</text>
+  <text x="608" y="380" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="500">Scheduling Fit</text>
+  <text x="608" y="394" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">availability · time zone</text>
+  <text x="608" y="407" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">appointment cadence</text>
+
+  <line x1="720" y1="360" x2="790" y2="298" stroke="#9C8DDB" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arr-l)"/>
+
+  <!-- Objective 5: Treatment Continuity (bottom-right) -->
+  <rect x="878" y="346" width="182" height="68" rx="6" fill="#1E1820" stroke="#9C8DDB" stroke-width="1.2"/>
+  <rect x="878" y="346" width="182" height="3" rx="2" fill="#9C8DDB"/>
+  <text x="894" y="362" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">OBJ 5</text>
+  <text x="894" y="380" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="500">Treatment Continuity</text>
+  <text x="894" y="394" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">prior engagement · history</text>
+  <text x="894" y="407" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">member retention signal</text>
+
+  <line x1="900" y1="346" x2="865" y2="298" stroke="#9C8DDB" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arr-l)"/>
+
+  <!-- Tension annotation -->
+  <rect x="592" y="462" width="466" height="54" rx="6" fill="#251E14" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="608" y="479" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">KEY TENSION</text>
+  <text x="698" y="479" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">Patient outcome vs therapist burnout</text>
+  <text x="608" y="494" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">High-complexity caseloads improve outcomes but compound</text>
+  <text x="608" y="508" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9">therapist strain over time. Model must balance both.</text>
+
+  <!-- Arrow to metrics -->
+  <line x1="1080" y1="258" x2="1118" y2="258" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-s)"/>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SECTION 3: Metrics (x: 1120–1560) -->
+  <!-- ══════════════════════════════════════════════ -->
+
+  <text x="1132" y="106" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">MEASURED OUTCOMES</text>
+  <line x1="1132" y1="112" x2="1548" y2="112" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Metric 1: +11% -->
+  <rect x="1132" y="122" width="408" height="140" rx="8" fill="#182018" stroke="#8FCB95" stroke-width="1.5"/>
+  <rect x="1132" y="122" width="408" height="4" rx="2" fill="#8FCB95"/>
+  <text x="1152" y="144" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">DELIVERED APPOINTMENTS</text>
+  <text x="1152" y="210" fill="#8FCB95" font-family="'Space Grotesk',sans-serif" font-size="68" font-weight="700" letter-spacing="-3">+11%</text>
+  <text x="1152" y="240" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">Appointments that actually happened</text>
+  <text x="1152" y="254" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">bottom-of-funnel · primary target metric</text>
+
+  <!-- Metric 2: -11% -->
+  <rect x="1132" y="278" width="408" height="140" rx="8" fill="#251E14" stroke="#CB6A3D" stroke-width="1.5"/>
+  <rect x="1132" y="278" width="408" height="4" rx="2" fill="#CB6A3D"/>
+  <text x="1152" y="300" fill="#CB6A3D" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">UNBOOKED RATE</text>
+  <text x="1152" y="366" fill="#CB6A3D" font-family="'Space Grotesk',sans-serif" font-size="68" font-weight="700" letter-spacing="-3">−11%</text>
+  <text x="1152" y="396" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">Fewer members lost between intake and delivery</text>
+  <text x="1152" y="410" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">intake → delivered appointment dropout</text>
+
+  <!-- Design note -->
+  <rect x="1132" y="434" width="408" height="54" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="1152" y="452" fill="#257D7C" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">DESIGN NOTE</text>
+  <text x="1152" y="468" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">Model optimizes for delivered appointment, not</text>
+  <text x="1152" y="482" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">top-of-funnel clicks or booking completion rate.</text>
+</svg>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1500 820" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg-teal" cx="30%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#257D7C" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-lavender" cx="80%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#9C8DDB" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arr-teal" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#257D7C"/>
+    </marker>
+    <marker id="arr-sage" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8FCB95"/>
+    </marker>
+    <marker id="arr-lav" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9C8DDB"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#CB6A3D"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1500" height="820" fill="#171410"/>
+  <rect width="1500" height="820" fill="url(#bg-teal)"/>
+  <rect width="1500" height="820" fill="url(#bg-lavender)"/>
+
+  <!-- EYEBROW -->
+  <line x1="48" y1="40" x2="76" y2="40" stroke="#257D7C" stroke-width="1.5" opacity="0.8"/>
+  <text x="88" y="44" fill="#9F9683"
+        font-family="ui-monospace,monospace" font-size="11" letter-spacing="2">CLINICAL NLP · HEADSPACE · LONGITUDINAL THERAPY CHAT DATA</text>
+
+  <!-- SECTION LABELS -->
+  <rect x="48" y="60" width="380" height="28" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="238" y="78" text-anchor="middle" fill="#257D7C"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">UNSTRUCTURED CHAT INPUT</text>
+
+  <rect x="464" y="60" width="220" height="28" rx="4" fill="#1E1820" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="574" y="78" text-anchor="middle" fill="#9C8DDB"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">NLP EXTRACTION</text>
+
+  <rect x="720" y="60" width="732" height="28" rx="4" fill="#182018" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.4"/>
+  <text x="1086" y="78" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">STRUCTURED CLINICAL SIGNALS</text>
+
+  <!-- dividers -->
+  <line x1="440" y1="56" x2="440" y2="508" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+  <line x1="698" y1="56" x2="698" y2="508" stroke="#2D2820" stroke-width="1" stroke-dasharray="4,6"/>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- SECTION 1: Chat bubbles (x: 48–420) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <!-- Session label -->
+  <text x="58" y="118" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">SESSION · WEEK 1</text>
+  <line x1="58" y1="122" x2="418" y2="122" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Therapist bubble 1 -->
+  <rect x="58" y="130" width="280" height="42" rx="6" fill="#1E2020" stroke="#2D2820" stroke-width="1"/>
+  <text x="72" y="147" fill="#9F9683" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">THERAPIST</text>
+  <text x="72" y="163" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="12">How have you been feeling this week?</text>
+
+  <!-- Member bubble 1 — anxiety signal -->
+  <rect x="90" y="180" width="320" height="54" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="104" y="197" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">MEMBER</text>
+  <text x="104" y="213" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">I've been feeling really anxious lately,</text>
+  <text x="104" y="228" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">especially in the mornings.</text>
+  <!-- highlight on "anxious" -->
+  <rect x="237" y="203" width="55" height="14" rx="2" fill="#257D7C" fill-opacity="0.25" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.6"/>
+
+  <!-- Session label week 3 -->
+  <text x="58" y="256" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">SESSION · WEEK 3</text>
+  <line x1="58" y1="260" x2="418" y2="260" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Member bubble 2 — activity signal -->
+  <rect x="90" y="268" width="320" height="54" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="104" y="285" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">MEMBER</text>
+  <text x="104" y="301" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">I went for a 30-minute walk yesterday,</text>
+  <text x="104" y="316" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">first time this week.</text>
+  <!-- highlight on "30-minute walk" -->
+  <rect x="131" y="291" width="108" height="14" rx="2" fill="#8FCB95" fill-opacity="0.18" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.5"/>
+
+  <!-- Session label week 5 -->
+  <text x="58" y="346" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1.5">SESSION · WEEK 5</text>
+  <line x1="58" y1="350" x2="418" y2="350" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Member bubble 3 — goal signal -->
+  <rect x="90" y="358" width="320" height="66" rx="6" fill="#1E2A28" stroke="#257D7C" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="104" y="375" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">MEMBER</text>
+  <text x="104" y="391" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">My goal was to sleep before midnight.</text>
+  <text x="104" y="407" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">I managed it 4 out of 7 days —</text>
+  <text x="104" y="421" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="12">better than last week!</text>
+  <!-- highlight "goal" -->
+  <rect x="110" y="381" width="31" height="14" rx="2" fill="#9C8DDB" fill-opacity="0.22" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+  <!-- highlight "4 out of 7" -->
+  <rect x="131" y="397" width="73" height="14" rx="2" fill="#9C8DDB" fill-opacity="0.22" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- SECTION 2: NLP Extraction (x: 448–680) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <!-- NLP Pipeline box -->
+  <rect x="454" y="108" width="228" height="360" rx="8" fill="#1A1820" stroke="#9C8DDB" stroke-width="1.5"/>
+
+  <text x="568" y="136" text-anchor="middle" fill="#9C8DDB"
+        font-family="'Space Grotesk',sans-serif" font-size="13" font-weight="500">NLP Pipeline</text>
+
+  <line x1="466" y1="144" x2="670" y2="144" stroke="#2D2820" stroke-width="0.8"/>
+
+  <!-- Pipeline steps -->
+  <g transform="translate(468, 156)">
+    <!-- Step 1 -->
+    <rect x="0" y="0" width="196" height="48" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="15" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">TOKENIZE</text>
+    <text x="10" y="31" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Session text segmentation</text>
+    <text x="10" y="44" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">+ speaker role tagging</text>
+
+    <!-- arrow -->
+    <line x1="98" y1="52" x2="98" y2="68" stroke="#9C8DDB" stroke-width="1.2" marker-end="url(#arr-lav)"/>
+
+    <!-- Step 2 -->
+    <rect x="0" y="72" width="196" height="48" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="87" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">ENTITY EXTRACT</text>
+    <text x="10" y="103" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Symptoms · activities · goals</text>
+    <text x="10" y="116" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">+ temporal markers</text>
+
+    <!-- arrow -->
+    <line x1="98" y1="124" x2="98" y2="140" stroke="#9C8DDB" stroke-width="1.2" marker-end="url(#arr-lav)"/>
+
+    <!-- Step 3 -->
+    <rect x="0" y="144" width="196" height="48" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="159" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">CLASSIFY</text>
+    <text x="10" y="175" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Sentiment · intent · severity</text>
+    <text x="10" y="188" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">+ longitudinal alignment</text>
+
+    <!-- arrow -->
+    <line x1="98" y1="196" x2="98" y2="212" stroke="#9C8DDB" stroke-width="1.2" marker-end="url(#arr-lav)"/>
+
+    <!-- Step 4 -->
+    <rect x="0" y="216" width="196" height="48" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="231" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">STRUCTURE</text>
+    <text x="10" y="247" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Per-member signal aggregation</text>
+    <text x="10" y="260" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">+ session-over-session delta</text>
+  </g>
+
+  <!-- Arrows from input to NLP -->
+  <line x1="420" y1="203" x2="450" y2="240" stroke="#257D7C" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arr-teal)" opacity="0.6"/>
+  <line x1="420" y1="295" x2="450" y2="295" stroke="#8FCB95" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arr-sage)" opacity="0.6"/>
+  <line x1="420" y1="391" x2="450" y2="350" stroke="#9C8DDB" stroke-width="1.2" stroke-dasharray="3,3" marker-end="url(#arr-lav)" opacity="0.6"/>
+
+  <!-- Arrows from NLP to outputs -->
+  <line x1="682" y1="210" x2="718" y2="185" stroke="#257D7C" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+  <line x1="682" y1="288" x2="718" y2="310" stroke="#8FCB95" stroke-width="1.5" marker-end="url(#arr-sage)"/>
+  <line x1="682" y1="366" x2="718" y2="610" stroke="#9C8DDB" stroke-width="1.5" marker-end="url(#arr-lav)"/>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- SECTION 3: Structured Outputs (x: 720–1472) -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <!-- ── OUTPUT 1: Anxiety & Depression Indicators ── -->
+  <rect x="720" y="100" width="740" height="160" rx="8" fill="#1E2A28" stroke="#257D7C" stroke-width="1.5"/>
+  <rect x="720" y="100" width="740" height="4" rx="2" fill="#257D7C"/>
+
+  <rect x="736" y="116" width="180" height="18" rx="9"
+        fill="#257D7C" fill-opacity="0.15" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="826" y="128" text-anchor="middle" fill="#257D7C"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">ANXIETY &amp; DEPRESSION INDICATORS</text>
+
+  <text x="736" y="154" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="15" font-weight="500">Symptom Signal Extraction</text>
+
+  <!-- Indicator pills -->
+  <g transform="translate(736, 166)">
+    <rect x="0" y="0" width="156" height="44" rx="4" fill="#1A2420" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="16" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">ANXIETY · HIGH</text>
+    <text x="10" y="33" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Morning onset · recurring</text>
+
+    <rect x="168" y="0" width="156" height="44" rx="4" fill="#1A2420" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="178" y="16" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">MOOD · IMPROVING</text>
+    <text x="178" y="33" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Week 3 uptick detected</text>
+
+    <rect x="336" y="0" width="156" height="44" rx="4" fill="#1A2420" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="346" y="16" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">SESSION TREND</text>
+    <text x="346" y="33" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">3 sessions · stable</text>
+
+    <rect x="504" y="0" width="220" height="44" rx="4" fill="#1A2420" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="514" y="16" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">SURFACES TO</text>
+    <text x="514" y="33" fill="#CDC1A9" font-family="ui-monospace,monospace" font-size="10">Care team · member app</text>
+  </g>
+
+  <!-- ── OUTPUT 2: Physical Activity ── -->
+  <rect x="720" y="278" width="740" height="140" rx="8" fill="#182018" stroke="#8FCB95" stroke-width="1.5"/>
+  <rect x="720" y="278" width="740" height="4" rx="2" fill="#8FCB95"/>
+
+  <rect x="736" y="294" width="166" height="18" rx="9"
+        fill="#8FCB95" fill-opacity="0.12" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="819" y="306" text-anchor="middle" fill="#8FCB95"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">PHYSICAL ACTIVITY TRACKING</text>
+
+  <text x="736" y="332" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="15" font-weight="500">Behavioral Trajectory per Member</text>
+
+  <!-- activity timeline bars -->
+  <g transform="translate(736, 344)">
+    <text x="0" y="12" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">WK 1</text>
+    <rect x="36" y="2" width="60" height="14" rx="3" fill="#8FCB95" fill-opacity="0.25"/>
+    <rect x="36" y="2" width="20" height="14" rx="3" fill="#8FCB95" opacity="0.7"/>
+    <text x="102" y="13" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">1 session</text>
+
+    <text x="0" y="34" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">WK 3</text>
+    <rect x="36" y="24" width="100" height="14" rx="3" fill="#8FCB95" fill-opacity="0.25"/>
+    <rect x="36" y="24" width="50" height="14" rx="3" fill="#8FCB95" opacity="0.7"/>
+    <text x="142" y="35" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">3 sessions · 30min avg</text>
+
+    <text x="0" y="56" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">WK 5</text>
+    <rect x="36" y="46" width="100" height="14" rx="3" fill="#8FCB95" fill-opacity="0.25"/>
+    <rect x="36" y="46" width="80" height="14" rx="3" fill="#8FCB95" opacity="0.7"/>
+    <text x="142" y="57" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">4 sessions · upward trend</text>
+
+    <!-- trend arrow -->
+    <text x="340" y="14" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">TREND</text>
+    <text x="340" y="38" fill="#8FCB95" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="600">↑</text>
+    <text x="340" y="60" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">improving</text>
+
+    <!-- extracted mention -->
+    <rect x="440" y="0" width="274" height="66" rx="6" fill="#1A2418" stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="454" y="16" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">EXTRACTED MENTION</text>
+    <text x="454" y="34" fill="#F6F1E8" font-family="'Space Grotesk',sans-serif" font-size="11">"30-minute walk yesterday"</text>
+    <text x="454" y="52" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9">duration: 30min · type: walk · recency: 1d</text>
+  </g>
+
+  <!-- ── OUTPUT 3: Goal Progress ── -->
+  <rect x="720" y="630" width="740" height="140" rx="8" fill="#1E1A28" stroke="#9C8DDB" stroke-width="1.5"/>
+  <rect x="720" y="630" width="740" height="4" rx="2" fill="#9C8DDB"/>
+
+  <rect x="736" y="646" width="152" height="18" rx="9"
+        fill="#9C8DDB" fill-opacity="0.12" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="812" y="658" text-anchor="middle" fill="#9C8DDB"
+        font-family="ui-monospace,monospace" font-size="9" letter-spacing="1">GOAL PROGRESS ACROSS TIME</text>
+
+  <text x="736" y="686" fill="#F6F1E8"
+        font-family="'Space Grotesk',sans-serif" font-size="15" font-weight="500">Longitudinal Goal Tracking</text>
+
+  <g transform="translate(736, 696)">
+    <!-- Goal stated -->
+    <rect x="0" y="0" width="168" height="52" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="10" y="16" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">GOAL STATED · WK 1</text>
+    <text x="10" y="32" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">Sleep before midnight</text>
+    <text x="10" y="46" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">extracted from session</text>
+
+    <text x="180" y="30" fill="#6B6158" font-family="ui-monospace,monospace" font-size="14">→</text>
+
+    <!-- Milestone -->
+    <rect x="198" y="0" width="168" height="52" rx="4" fill="#201828" stroke="#9C8DDB" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="208" y="16" fill="#9C8DDB" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">PROGRESS · WK 3</text>
+    <text x="208" y="32" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">2 / 7 days achieved</text>
+    <text x="208" y="46" fill="#6B6158" font-family="ui-monospace,monospace" font-size="9">partial · struggling</text>
+
+    <text x="378" y="30" fill="#6B6158" font-family="ui-monospace,monospace" font-size="14">→</text>
+
+    <!-- Updated -->
+    <rect x="396" y="0" width="168" height="52" rx="4" fill="#201828" stroke="#8FCB95" stroke-width="1" stroke-opacity="0.8"/>
+    <text x="406" y="16" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.8">MILESTONE · WK 5</text>
+    <text x="406" y="32" fill="#CDC1A9" font-family="'Space Grotesk',sans-serif" font-size="11">4 / 7 days achieved ✓</text>
+    <text x="406" y="46" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="9">improving · on track</text>
+  </g>
+
+  <!-- CAPTION -->
+  <line x1="48" y1="778" x2="76" y2="778" stroke="#6B6158" stroke-width="1" opacity="0.5"/>
+  <text x="88" y="782" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="0.3">NLP systems extract structured clinical signals from longitudinal therapy chat — surfacing anxiety/depression indicators, behavioral trajectories,</text>
+  <text x="88" y="798" fill="#6B6158"
+        font-family="ui-monospace,monospace" font-size="10" letter-spacing="0.3">and goal progress over time. Outputs feed care team dashboards and downstream personalization surfaces.</text>
+</svg>
