@@ -161,6 +161,78 @@
     padding: clamp(72px, 14vh, 140px) 0 clamp(60px, 10vh, 100px);
     border-bottom: 1px solid var(--border-soft);
   }
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .hero-layout { grid-template-columns: 1fr; gap: 36px; }
+    .hero-photo-col { order: -1; }
+    .hero-photo { max-width: 260px; }
+  }
+  .hero-left { display: flex; flex-direction: column; }
+
+  .hero-photo-col {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+  .hero-photo {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 3px solid var(--amber);
+    box-shadow: 10px 10px 0 var(--terracotta);
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .hero-tagline-block {
+    margin-top: 36px;
+    background: var(--amber);
+    padding: 26px 30px;
+    border-radius: 4px;
+    max-width: 640px;
+  }
+  .hero-tagline-block p {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    line-height: 1.65;
+    color: rgba(20, 16, 10, 0.88);
+    margin: 0;
+  }
+
+  .hero-role {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .hero-role em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--text-soft);
+  }
+
   .hero-eyebrow {
     display: flex;
     align-items: center;
@@ -192,27 +264,6 @@
     font-style: italic;
     font-weight: 300;
     color: var(--text);
-  }
-
-  .hero-tagline {
-    margin-top: 36px;
-    max-width: 640px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.2rem, 2.3vw, 1.55rem);
-    line-height: 1.45;
-    color: var(--text-soft);
-  }
-  .hero-tagline strong {
-    font-weight: 400;
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: 0.7em;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sage);
-    padding: 0 6px;
   }
 
   .hero-meta {
@@ -737,39 +788,53 @@
   <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-eyebrow">Portfolio &nbsp;/&nbsp; 2026</div>
+      <div class="hero-layout">
 
-      <h1 class="hero-name">Christabelle<br/><em>Pabalan</em></h1>
+        <div class="hero-left">
+          <div class="hero-eyebrow">Portfolio &nbsp;/&nbsp; 2026</div>
 
-      <p class="hero-tagline">
-        I enjoy building for underserved groups and for causes that
-        impact our quality of life, whether through AI systems or
-        creative pursuits, such as poetry, writing, and dance.
-        <br/><br/>
-        <strong>Lead Data Scientist</strong> · Qventus
-      </p>
+          <h1 class="hero-name">Christabelle<br/><em>Pabalan</em></h1>
 
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Based in</span>
-          <span class="hero-meta-val">Studio City, CA</span>
+          <div class="hero-tagline-block">
+            <p>I enjoy building for underserved groups and for causes that
+            impact our quality of life, whether through AI systems or
+            creative pursuits, such as poetry, writing, and dance.</p>
+          </div>
+
+          <div class="hero-role">
+            Lead Data Scientist &nbsp;·&nbsp; <em>Qventus</em>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Based in</span>
+              <span class="hero-meta-val">Studio City, CA</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Email</span>
+              <span class="hero-meta-val"><a href="mailto:christabellepabalan@gmail.com">christabellepabalan@gmail.com</a></span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">LinkedIn</span>
+              <span class="hero-meta-val"><a href="https://www.linkedin.com/in/christabellecp/" target="_blank" rel="noopener">christabellecp</a></span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">GitHub</span>
+              <span class="hero-meta-val"><a href="https://github.com/christabellecp" target="_blank" rel="noopener">christabellecp</a></span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Writing</span>
+              <span class="hero-meta-val"><a href="https://medium.com/@christabellecp" target="_blank" rel="noopener">Medium · TDS</a></span>
+            </div>
+          </div>
         </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Email</span>
-          <span class="hero-meta-val"><a href="mailto:christabellepabalan@gmail.com">christabellepabalan@gmail.com</a></span>
+
+        <div class="hero-photo-col">
+          <div class="hero-photo">
+            <img src="assets/images/christabelle-headshot.jpeg" alt="Christabelle Pabalan" />
+          </div>
         </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">LinkedIn</span>
-          <span class="hero-meta-val"><a href="https://www.linkedin.com/in/christabellecp/" target="_blank" rel="noopener">christabellecp</a></span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">GitHub</span>
-          <span class="hero-meta-val"><a href="https://github.com/christabellecp" target="_blank" rel="noopener">christabellecp</a></span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Writing</span>
-          <span class="hero-meta-val"><a href="https://medium.com/@christabellecp" target="_blank" rel="noopener">Medium · TDS</a></span>
-        </div>
+
       </div>
     </div>
   </section>
@@ -832,6 +897,9 @@
         <div class="project-grid single">
 
           <article class="card card-deep">
+            <div class="card-preview" style="aspect-ratio: 5/2; margin: -28px -30px 8px;">
+              <img src="assets/images/llm-eval-framework.svg" alt="LLM Evaluation Framework pipeline: Curate, Generate, Evaluate, Optimize, loop" style="object-fit: cover; object-position: center;" />
+            </div>
             <div class="card-tags">
               <span class="card-tag lead">LLM Eval</span>
               <span class="card-tag">Healthcare AI</span>
@@ -859,6 +927,9 @@
           </article>
 
           <article class="card card-deep">
+            <div class="card-preview" style="aspect-ratio: 5/2; margin: -28px -30px 8px;">
+              <img src="assets/images/surgical-outcomes-model.svg" alt="Hybrid ensemble model architecture: EHR inputs to three surgical outcome models to calibrated risk scores" style="object-fit: cover; object-position: center;" />
+            </div>
             <div class="card-tags">
               <span class="card-tag lead">Hybrid ML</span>
               <span class="card-tag">Ensemble</span>

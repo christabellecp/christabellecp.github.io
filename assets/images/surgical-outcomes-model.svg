@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#8FCB95" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#171410" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar-acc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8FCB95" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8FCB95" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="bar-spec" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#257D7C" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#257D7C" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="bar-prec" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4DD4B5" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#4DD4B5" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" fill="#171410"/>
+  <rect width="1200" height="420" fill="url(#bg2)"/>
+
+  <!-- EYEBROW -->
+  <line x1="60" y1="48" x2="88" y2="48" stroke="#8FCB95" stroke-width="1.5" opacity="0.8"/>
+  <text x="100" y="52" fill="#9F9683"
+        font-family="ui-monospace,monospace"
+        font-size="11" letter-spacing="2">HYBRID ML + GENERATIVE AI · PERIOPERATIVE CARE · DEPLOYED</text>
+
+  <!-- ── THREE DOMAIN PANELS ── -->
+
+  <!-- Panel 1: Surgical Cancellation -->
+  <g transform="translate(60, 90)">
+    <rect width="340" height="290" rx="6" fill="#1E2018" stroke="#8FCB95" stroke-width="1.5" stroke-opacity="0.6"/>
+    <rect width="340" height="4" rx="2" fill="#8FCB95"/>
+
+    <!-- domain label -->
+    <text x="20" y="30" fill="#8FCB95"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">CANCELLATION RISK</text>
+
+    <!-- big lift stat -->
+    <text x="20" y="90" fill="#F6F1E8"
+          font-family="'Space Grotesk',sans-serif"
+          font-size="52" font-weight="600" letter-spacing="-2">+17%</text>
+    <text x="22" y="112" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="1">ACCURACY IMPROVEMENT</text>
+
+    <!-- before/after bars -->
+    <text x="20" y="148" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">ACCURACY</text>
+    <rect x="20" y="154" width="200" height="8" rx="4" fill="#2D2820"/>
+    <rect x="20" y="154" width="134" height="8" rx="4" fill="#8FCB95" opacity="0.35"/>
+    <rect x="20" y="154" width="158" height="8" rx="4" fill="url(#bar-acc)"/>
+    <text x="244" y="162" fill="#8FCB95" font-family="ui-monospace,monospace" font-size="11" font-weight="500">0.79</text>
+    <text x="290" y="162" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">vs 0.67</text>
+
+    <text x="20" y="192" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">SPECIFICITY</text>
+    <rect x="20" y="198" width="200" height="8" rx="4" fill="#2D2820"/>
+    <rect x="20" y="198" width="142" height="8" rx="4" fill="#257D7C" opacity="0.35"/>
+    <rect x="20" y="198" width="182" height="8" rx="4" fill="url(#bar-spec)"/>
+    <text x="244" y="206" fill="#257D7C" font-family="ui-monospace,monospace" font-size="11" font-weight="500">0.91</text>
+    <text x="290" y="206" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">vs 0.71</text>
+
+    <text x="20" y="240" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">PRECISION</text>
+    <rect x="20" y="246" width="200" height="8" rx="4" fill="#2D2820"/>
+    <rect x="20" y="246" width="98" height="8" rx="4" fill="#4DD4B5" opacity="0.35"/>
+    <rect x="20" y="246" width="148" height="8" rx="4" fill="url(#bar-prec)"/>
+    <text x="244" y="254" fill="#4DD4B5" font-family="ui-monospace,monospace" font-size="11" font-weight="500">0.74</text>
+    <text x="290" y="254" fill="#9F9683" font-family="ui-monospace,monospace" font-size="10">vs 0.49</text>
+
+    <!-- tag -->
+    <rect x="20" y="268" width="76" height="18" rx="9"
+          fill="#8FCB95" fill-opacity="0.12"
+          stroke="#8FCB95" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="58" y="280" text-anchor="middle" fill="#8FCB95"
+          font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">PREDICTIVE</text>
+  </g>
+
+  <!-- Panel 2: Patient Risk Pre-Surgery -->
+  <g transform="translate(430, 90)">
+    <rect width="340" height="290" rx="6" fill="#1A2020" stroke="#257D7C" stroke-width="1.5" stroke-opacity="0.7"/>
+    <rect width="340" height="4" rx="2" fill="#257D7C"/>
+
+    <text x="20" y="30" fill="#257D7C"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">PATIENT RISK STRATIFICATION</text>
+
+    <text x="20" y="90" fill="#F6F1E8"
+          font-family="'Space Grotesk',sans-serif"
+          font-size="52" font-weight="600" letter-spacing="-2">+152%</text>
+    <text x="22" y="112" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="1">LIFT OVER RANDOM BASELINE</text>
+
+    <!-- stat rows -->
+    <rect x="20" y="136" width="300" height="44" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="36" y="154" fill="#4DD4B5"
+          font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">97%</text>
+    <text x="36" y="172" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10">of interrater agreement ceiling</text>
+
+    <rect x="20" y="192" width="300" height="44" rx="4" fill="#1E2A28" stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="36" y="210" fill="#4DD4B5"
+          font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">+76%</text>
+    <text x="36" y="228" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10">over structured-only baseline</text>
+
+    <rect x="20" y="268" width="76" height="18" rx="9"
+          fill="#257D7C" fill-opacity="0.12"
+          stroke="#257D7C" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="58" y="280" text-anchor="middle" fill="#257D7C"
+          font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">JMIR REVIEW</text>
+  </g>
+
+  <!-- Panel 3: Workflow Efficiency -->
+  <g transform="translate(800, 90)">
+    <rect width="340" height="290" rx="6" fill="#201A18" stroke="#CB6A3D" stroke-width="1.5" stroke-opacity="0.6"/>
+    <rect width="340" height="4" rx="2" fill="#CB6A3D"/>
+
+    <text x="20" y="30" fill="#CB6A3D"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="2">SURGICAL WORKFLOW EFFICIENCY</text>
+
+    <text x="20" y="90" fill="#F6F1E8"
+          font-family="'Space Grotesk',sans-serif"
+          font-size="52" font-weight="600" letter-spacing="-2">−83%</text>
+    <text x="22" y="112" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10" letter-spacing="1">WASTE REDUCTION IN PRE-SURGICAL SCREENING</text>
+
+    <rect x="20" y="136" width="300" height="44" rx="4" fill="#251E14" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="36" y="154" fill="#ECA253"
+          font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">10.8 hrs</text>
+    <text x="36" y="172" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10">saved per 100 patients</text>
+
+    <rect x="20" y="192" width="300" height="44" rx="4" fill="#251E14" stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.4"/>
+    <text x="36" y="210" fill="#ECA253"
+          font-family="'Space Grotesk',sans-serif" font-size="22" font-weight="600">Staff realloc.</text>
+    <text x="36" y="228" fill="#9F9683"
+          font-family="ui-monospace,monospace" font-size="10">to higher-acuity cases</text>
+
+    <rect x="20" y="268" width="76" height="18" rx="9"
+          fill="#CB6A3D" fill-opacity="0.12"
+          stroke="#CB6A3D" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="58" y="280" text-anchor="middle" fill="#CB6A3D"
+          font-family="ui-monospace,monospace" font-size="9" letter-spacing="0.5">OPERATIONAL</text>
+  </g>
+</svg>
